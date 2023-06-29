@@ -4,23 +4,27 @@ const AppStateContext = createContext({})
 
 export const AppStateProvider = ({ children }) => {
 
-  const pages = []
+  const pages = [
+    'Getting Started',
+    'Portability',
+    'The Prospect',
+    'Create New Order',
+    'Credit Check',
+    'Provider Info',
+    'Review',
+    'Due Date',
+    'Disconnect',
+    'Closing the Call',
+  ]
 
-  const [newPage, setNewPage] = useState(0)
-  const [currentPage, setCurrentPage] = useState(newPage)
+  const [value, setValue] = useState('')
 
-  const handleNextPage = () => {
-    
-  }
-  
   return (
     <AppStateContext.Provider
       value={{
         pages,
-        currentPage,
-        setCurrentPage,
-        newPage,
-        setNewPage,
+        value,
+        setValue,
       }}
     >
       {children}

@@ -10,3 +10,9 @@
 body {
   background-color: #141928;
 }
+
+a {
+  color: navy;
+  font-weight: 500;
+  text-decoration: underline;
+}
