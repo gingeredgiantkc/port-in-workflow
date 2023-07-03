@@ -4,34 +4,42 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-} from 'react-router-dom'
+  } from 'react-router-dom'
 
 // pages
 import Home from './pages/Home'
-import Portable from './pages/portability/Portable'
-import NonPortable from './pages/portability/NonPortable'
-import Close from './pages/Close'
-import PortWithAcct from './pages/portability/PortWithAcct'
+import Precheck from './pages/precheck'
+import AcctVoip from './pages/precheck/acct/AcctVoip'
+import Transfer from './pages/precheck/end/Transfer'
+import Acct from './pages/precheck/acct/Acct'
+import Portable from './pages/precheck/tn/Portable'
+import PrecheckConfirm from './pages/precheck/PrecheckConfirm'
+import NonPortable from './pages/precheck/end/NonPortable'
+
 
 // layouts
-import RootLayout from './layouts/RootLayout'
-import HomeLayout from './layouts/HomeLayout'
+import HomeLayout from './layouts/home'
+import PrecheckLayout from './layouts/precheck'
+import EndLayout from './layouts/end'
+import NoInfo from './pages/precheck/end/NoInfo'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Fragment>
       <Route path='/' element={<HomeLayout />}>
         <Route index element={<Home />} />
-        <Route path='close' element={<Close />} />
       </Route>
-      <Route path='/precheck' element={<RootLayout />}>
-        <Route index element={<Portable />} />
-        <Route path='port-wo-acct-vo' element={<NonPortable />} />
-        <Route path='port-wo-acct' element={<NonPortable />} />
-        <Route path='port-w-acct-vo' element={<NonPortable />} />
-        <Route path='port-w-acct' element={<PortWithAcct />} />
-        <Route path='confirm' element={<PortWithAcct />} />
-        <Route path='non-portable' element={<Close />} />
+      <Route path='/precheck' element={<PrecheckLayout />}>
+        <Route index element={<Precheck />} />
+        <Route path='portable' element={<Portable />} />
+        <Route path='acct-1' element={<AcctVoip />} />
+        <Route path='acct-2' element={<Acct />} />
+        <Route path='confirm' element={<PrecheckConfirm />} />
+      </Route>
+      <Route path='/end' element={<EndLayout />}>
+        <Route path='transfer' element={<Transfer />} />
+        <Route path='non-portable' element={<NonPortable />} />
+        <Route path='no-info' element={<NoInfo />} />
       </Route>
     </Fragment>
   )
@@ -39,7 +47,7 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <RouterProvider router={router} />      
+    <RouterProvider router={router} />
   ) 
 }
 

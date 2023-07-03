@@ -8,11 +8,10 @@ import {
   IconButton,
   ThemeProvider
 } from '@mui/material'
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import useAppStateContext from '../hooks/useAppStateContext'
 
-function HomeLayout() {
-  const { value } = useAppStateContext()
+function StartLayout() {
 
   const theme = createTheme({
     palette: {
@@ -43,8 +42,8 @@ function HomeLayout() {
               sx={{ fontSize: '4rem' }}
               variant='contained'
               component={NavLink}
-              to={value}
-              color='success'
+              to="/precheck"
+              color='primary'
               size='large'
             >
               <ArrowCircleRightIcon fontSize='inherit' />
@@ -56,4 +55,4 @@ function HomeLayout() {
   )
 }
 
-export default HomeLayout
+export default StartLayout

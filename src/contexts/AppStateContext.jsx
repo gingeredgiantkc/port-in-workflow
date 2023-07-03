@@ -17,14 +17,43 @@ export const AppStateProvider = ({ children }) => {
     'Closing the Call',
   ]
 
-  const [value, setValue] = useState('')
+  const defaultState = {
+    item1: false,
+    item2: false,
+    item3: false,
+    item4: false,
+    item5: false,
+  }
+  const defaultValue = '/'
+  const defaultOpen = false
 
+  const [state, setState] = useState(defaultState)
+  const [value, setValue] = useState(defaultValue)
+  const [open, setOpen] = useState(defaultOpen)
+
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+  const handleReset = () => {
+    setState(defaultState);
+    setValue(defaultValue);
+    setOpen(defaultOpen);
+  }
+  
   return (
     <AppStateContext.Provider
       value={{
         pages,
+        defaultState,
+        defaultValue,
+        defaultOpen,
+        open,
+        handleOpen,
+        handleClose,
+        handleReset,
         value,
         setValue,
+        state,
+        setState,
       }}
     >
       {children}

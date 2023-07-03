@@ -1,22 +1,20 @@
 import React from 'react'
-import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 import {
   Box,
-  Button,
   Card,
   CardContent,
   createTheme,
+  IconButton,
   ThemeProvider
 } from '@mui/material'
+import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
 import useAppStateContext from '../hooks/useAppStateContext'
+import ViewModal from '../components/ViewModal'
 
-function RootLayout() {
-  const { value } = useAppStateContext()
-  const navigate = useNavigate()
-  const goBack = () => {
-    navigate(-1)
-  }
-
+export default function EndLayout() {
+  const { handleOpen } = useAppStateContext()
+  
   const theme = createTheme({
     palette: {
       background: {
@@ -24,6 +22,7 @@ function RootLayout() {
       },
     },
   })
+
   return (
     <ThemeProvider theme={theme}>
       <Card
@@ -40,30 +39,21 @@ function RootLayout() {
         <CardContent>
           <Box sx={{ border: 4, borderRadius: '16px', borderColor: 'error.main' }}>
             <Outlet />
+            <ViewModal />
           </Box>
-          <Box sx={{ pt: 2, mx: 'auto', flexGrow: 1, textAlign: 'center' }}>
-            <Button
-              sx={{ mx: 1 }}
+          <Box sx={{ pt: 2, gap: 2, textAlign: 'end' }}>
+            <IconButton
+              sx={{ fontSize: '4rem' }}
               variant='contained'
-              onClick={goBack}
-              color='success'
+              onClick={handleOpen}
+              color='error'
+              size='large'
             >
-              Back
-            </Button>
-            <Button
-              sx={{ mx: 1 }}
-              variant='contained'
-              component={NavLink}
-              to={value}
-              color='success'
-            >
-              Next
-            </Button>
+              <ReplayCircleFilledIcon fontSize='inherit' />
+            </IconButton>
           </Box>
         </CardContent>
       </Card>
     </ThemeProvider>
   )
 }
-
-export default RootLayout

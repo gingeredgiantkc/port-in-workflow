@@ -7,7 +7,6 @@ const Title = (props) => {
     <Box
       sx={{
         fontSize: '3rem',
-        textAlign: 'center',
         fontWeight: '700',
         fontFamily: 'MidPointPro',
         ...sx,
@@ -23,7 +22,6 @@ const Body = (props) => {
     <Box
       sx={{
         fontSize: '1rem',
-        textAlign: 'justify',
         ...sx,
       }}
       {...rest}
