@@ -11,7 +11,8 @@ import {
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
 import useAppStateContext from '../hooks/useAppStateContext'
-import ViewModal from '../components/ViewModal'
+import ViewModal from '../components/Modal'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 function PrecheckLayout() {
   const { value, state, handleOpen } = useAppStateContext()
@@ -39,6 +40,7 @@ function PrecheckLayout() {
       >
         <CardContent>
           <Box sx={{ border: 4, borderRadius: '16px', borderColor: 'error.main' }}>
+            <Breadcrumbs />
             <Outlet />
             <ViewModal />
           </Box>

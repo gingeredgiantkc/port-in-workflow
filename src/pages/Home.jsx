@@ -1,15 +1,10 @@
 import React from 'react'
-import { FormControlLabel, RadioGroup, Radio, FormControl } from '@mui/material'
 import useAppStateContext from '../hooks/useAppStateContext'
 import Grid, { Body, Title } from '../components/Grid'
 
 export default function Home() {
-  const { value, setValue } = useAppStateContext()
+  const { value } = useAppStateContext()
   console.log({ value });
-
-  const handleChange = (e) => {
-    setValue(e.target.value);
-  }
 
   return (
     <Grid

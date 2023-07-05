@@ -1,47 +1,39 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import {
-  createBrowserRouter,
+  createMemoryRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
   } from 'react-router-dom'
 
+// layouts
+import RootLayout from './layouts/root'
+
 // pages
 import Home from './pages/Home'
-import Precheck from './pages/precheck'
-import AcctVoip from './pages/precheck/acct/AcctVoip'
-import Transfer from './pages/precheck/end/Transfer'
-import Acct from './pages/precheck/acct/Acct'
-import Portable from './pages/precheck/tn/Portable'
-import PrecheckConfirm from './pages/precheck/PrecheckConfirm'
-import NonPortable from './pages/precheck/end/NonPortable'
+import PrecheckConfirm from './pages/PrecheckConfirm'
+import ExistingService from './pages/ExistingService'
+import CheckPortability from './pages/CheckPortability'
+import ProviderInfo from './pages/ProviderInfo'
+import EndingNoInfo from './pages/end/EndingNoInfo'
+import EndingNotPortable from './pages/end/EndingNotPortable'
+import EndingTransferToSales from './pages/end/EndingTransferToSales'
 
-
-// layouts
-import HomeLayout from './layouts/home'
-import PrecheckLayout from './layouts/precheck'
-import EndLayout from './layouts/end'
-import NoInfo from './pages/precheck/end/NoInfo'
-
-const router = createBrowserRouter(
+const router = createMemoryRouter(
   createRoutesFromElements(
-    <Fragment>
-      <Route path='/' element={<HomeLayout />}>
-        <Route index element={<Home />} />
-      </Route>
-      <Route path='/precheck' element={<PrecheckLayout />}>
-        <Route index element={<Precheck />} />
-        <Route path='portable' element={<Portable />} />
-        <Route path='acct-1' element={<AcctVoip />} />
-        <Route path='acct-2' element={<Acct />} />
-        <Route path='confirm' element={<PrecheckConfirm />} />
-      </Route>
-      <Route path='/end' element={<EndLayout />}>
-        <Route path='transfer' element={<Transfer />} />
-        <Route path='non-portable' element={<NonPortable />} />
-        <Route path='no-info' element={<NoInfo />} />
-      </Route>
-    </Fragment>
+    <Route path='/' element={<RootLayout />}>
+      <Route index element={<Home />} />    
+      <Route path='existing-service' element={<ExistingService />} /> 
+      <Route path='existing-service/check-portability' element={<CheckPortability />} />
+      <Route path='existing-service/check-portability/provider-info' element={<ProviderInfo />} />
+      <Route path='existing-service/check-portability/provider-info/precheck-confirm' element={<PrecheckConfirm />} />
+      <Route path='existing-service/check-portability/provider-info/ending-no-info' element={<EndingNoInfo />} />
+      <Route path='existing-service/check-portability/ending-not-portable' element={<EndingNotPortable />} />
+      <Route path='existing-service/provider-info' element={<ProviderInfo />} />
+      <Route path='existing-service/provider-info/precheck-confirm' element={<PrecheckConfirm />} />
+      <Route path='existing-service/provider-info/ending-no-info' element={<EndingNoInfo />} />
+      <Route path='existing-service/ending-transfer' element={<EndingTransferToSales />} />
+    </Route>
   )
 )
 

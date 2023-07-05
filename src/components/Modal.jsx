@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal';
+import { Modal as MuiModal } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import useAppStateContext from '../hooks/useAppStateContext';
@@ -20,7 +20,7 @@ const style = {
   p: 4,
 };
 
-export default function ViewModal() {
+export default function Modal() {
   const { value, open, handleClose, handleReset } = useAppStateContext()
   const navigate = useNavigate()
   const handleConfirm = () => {
@@ -31,7 +31,7 @@ export default function ViewModal() {
   }
   return (
     <div>
-      <Modal
+      <MuiModal
         open={open}
         onClose={handleClose}
         closeAfterTransition
@@ -80,7 +80,7 @@ export default function ViewModal() {
             </Grid>
           </Box>
         </Fade>
-      </Modal>
+      </MuiModal>
     </div>
   );
 }

@@ -10,7 +10,7 @@ import {
 } from '@mui/material'
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
 import useAppStateContext from '../hooks/useAppStateContext'
-import ViewModal from '../components/ViewModal'
+import ViewModal from '../components/Modal'
 
 export default function EndLayout() {
   const { handleOpen } = useAppStateContext()

@@ -4,9 +4,9 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import Grid, { Body, Title } from '../../../components/Grid'
+import Grid, { Body, Title } from '../../components/Grid'
 
-export default function Transfer() {
+export default function EndingNoInfo() {
   return (
     <Grid
       sx={{
@@ -36,7 +36,7 @@ export default function Transfer() {
           fontWeight: 'medium'
         }}
       >
-        Callers without active accounts who wish to establish any service in addition to voice should be transferred to Sales.<br /><br />
+        An account number and PIN are required to complete a port-in. 
       </Body>
       <Body
         sx={{
@@ -47,16 +47,16 @@ export default function Transfer() {
       >
         <List>
           <ListItem disablePadding>
-            <ListItemIcon sx={{ color: 'success' }}>
+            <ListItemIcon>
               <CheckCircleIcon />
             </ListItemIcon>
-            <ListItemText primary="Gain permission from your Team Lead to transfer the call." />
+            <ListItemText primary="Offer to follow-up with the customer at a time when he/she can provide the required information." />
           </ListItem>
           <ListItem disablePadding>
             <ListItemIcon>
               <CheckCircleIcon />
             </ListItemIcon>
-            <ListItemText primary="Explain to the customer that you will be connecting him/her to a Sales Specialist to complete their order." />
+            <ListItemText primary="Set the follow-up in HUB." />
           </ListItem>
           <ListItem disablePadding>
             <ListItemIcon>
@@ -74,7 +74,7 @@ export default function Transfer() {
             <ListItemIcon>
               <CheckCircleIcon />
             </ListItemIcon>
-            <ListItemText primary="Transfer the call in HUB." />
+            <ListItemText primary="Disposition and close the call." />
           </ListItem>
         </List>
       </Body>

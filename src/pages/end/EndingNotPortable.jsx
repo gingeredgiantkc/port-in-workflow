@@ -4,9 +4,9 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import Grid, { Body, Title } from '../../../components/Grid'
+import Grid, { Body, Title } from '../../components/Grid'
 
-export default function NonPortable() {
+export default function EndingNotPortable() {
   return (
     <Grid
       sx={{

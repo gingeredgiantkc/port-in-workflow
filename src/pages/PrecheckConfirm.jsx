@@ -1,10 +1,9 @@
 import React from 'react'
-import useAppStateContext from '../../hooks/useAppStateContext'
-import Grid, { Body, Title } from '../../components/Grid'
+import useAppStateContext from '../hooks/useAppStateContext'
+import Grid, { Body, Title } from '../components/Grid'
 
 export default function PrecheckConfirm() {
   const { value, setValue } = useAppStateContext()
-  setValue('/start');
   console.log(value);
 
   return (

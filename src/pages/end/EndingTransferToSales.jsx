@@ -4,9 +4,9 @@ import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemIcon from '@mui/material/ListItemIcon/ListItemIcon'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import Grid, { Body, Title } from '../../../components/Grid'
+import Grid, { Body, Title } from '../../components/Grid'
 
-export default function NoInfo() {
+export default function EndingTransferToSales() {
   return (
     <Grid
       sx={{
@@ -36,7 +36,7 @@ export default function NoInfo() {
           fontWeight: 'medium'
         }}
       >
-        An account number and PIN are required to complete a port-in. 
+        Callers without active accounts who wish to establish any service in addition to voice should be transferred to Sales.<br /><br />
       </Body>
       <Body
         sx={{
@@ -47,16 +47,16 @@ export default function NoInfo() {
       >
         <List>
           <ListItem disablePadding>
-            <ListItemIcon>
+            <ListItemIcon sx={{ color: 'success' }}>
               <CheckCircleIcon />
             </ListItemIcon>
-            <ListItemText primary="Offer to follow-up with the customer at a time when he/she can provide the required information." />
+            <ListItemText primary="Gain permission from your Team Lead to transfer the call." />
           </ListItem>
           <ListItem disablePadding>
             <ListItemIcon>
               <CheckCircleIcon />
             </ListItemIcon>
-            <ListItemText primary="Set the follow-up in HUB." />
+            <ListItemText primary="Explain to the customer that you will be connecting him/her to a Sales Specialist to complete their order." />
           </ListItem>
           <ListItem disablePadding>
             <ListItemIcon>
@@ -74,7 +74,7 @@ export default function NoInfo() {
             <ListItemIcon>
               <CheckCircleIcon />
             </ListItemIcon>
-            <ListItemText primary="Disposition and close the call." />
+            <ListItemText primary="Transfer the call in HUB." />
           </ListItem>
         </List>
       </Body>

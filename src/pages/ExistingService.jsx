@@ -1,11 +1,12 @@
 import React from 'react'
 import { FormControlLabel, FormControl, Radio, RadioGroup } from '@mui/material'
-import useAppStateContext from '../../hooks/useAppStateContext'
-import Grid, { Body, Title } from '../../components/Grid'
+import useAppStateContext from '../hooks/useAppStateContext'
+import Grid, { Body, Title } from '../components/Grid'
 
-export default function Precheck() {
+export default function ExistingService() {
   const { value, setValue } = useAppStateContext()
   console.log({ value });
+
 
   return (
     <Grid
@@ -23,7 +24,7 @@ export default function Precheck() {
         }}
       >
         <span className='text-midnight-express'>
-          Getting Started
+          Current Service(s)
         </span>
         <div className='flex-auto mr-12 -mt-4 border-t-4 transition duration-500 ease-in-out border-torch-red' />
         <div className='flex-auto mr-24 mt-2 border-t-4 transition duration-500 ease-in-out border-midnight-express' />
@@ -63,23 +64,18 @@ export default function Precheck() {
           <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
             <FormControlLabel
               control={<Radio size='small' />}
-              label='No, the customer does not have an existing account/order, and yes, the customer is establishing a voice-only account.'
-              value='portable'
+              label='No, the customer does not have an existing account/order and wants to install a voice service only.'
+              value='provider-info'
             />
             <FormControlLabel
               control={<Radio size='small' />}
-              label='No, the customer does not have an existing account/order, and no, the customer is not establishing a voice-only account.'
-              value='/end/transfer'
+              label='No, the customer does not have an existing account/order and wants to install new data and voice service.'
+              value='ending-transfer'
             />
             <FormControlLabel
               control={<Radio size='small' />}
-              label='Yes, the customer has an existing account/order, and yes, the customer is establishing a voice-only account.'
-              value='acct-1'
-            />
-            <FormControlLabel
-              control={<Radio size='small' />}
-              label='Yes, the customer has an existing account/order, and no, the customer is not establishing a voice-only account.'
-              value='acct-2'
+              label='Yes, the customer has an existing account/order.'
+              value='check-portability'
             />
           </RadioGroup>
         </FormControl>

@@ -1,9 +1,9 @@
 import React from 'react'
-import Grid, { Body, Title } from '../../../components/Grid'
-import useAppStateContext from '../../../hooks/useAppStateContext'
+import Grid, { Body, Title } from '../components/Grid'
+import useAppStateContext from '../hooks/useAppStateContext'
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 
-export default function Portable() {
+export default function ProviderInfo() {
   const { value, setValue } = useAppStateContext()
   console.log({ value });
   return (
@@ -68,12 +68,12 @@ export default function Portable() {
             <FormControlLabel
               control={<Radio size='small' />}
               label='Yes'
-              value='confirm'
+              value='precheck-confirm'
             />
             <FormControlLabel
               control={<Radio size='small' />}
               label='No'
-              value='/end/no-info'
+              value='ending-no-info'
             />
           </RadioGroup>
         </FormControl>
