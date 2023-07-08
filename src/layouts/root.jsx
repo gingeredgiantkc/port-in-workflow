@@ -16,6 +16,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Grid from '../components/Grid'
 import Modal from '../components/Modal'
 
+
 function RootLayout() {
   const { pages, firstPage, setFirstPage } = useAppStateContext()
   console.log(pages)
