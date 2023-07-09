@@ -3,9 +3,20 @@
 @import 'tailwindcss/utilities';
 
 @font-face {
-  font-family: "MidpointPro";
+  font-family: "midpoint-pro";
   src: url("/fonts/midpointPro.otf");
 }
+
+@font-face {
+  font-family: "object-sans";
+  src: url("/fonts/ObjectSans.otf");
+}
+
+@font-face {
+  font-family: "bandwidth";
+  src: url("/fonts/Bandwidth.otf");
+}
+
 
 body {
   background-color: #141928;

@@ -1,4 +1,6 @@
 import React from 'react'
+import { ThemeProvider } from '@mui/material/styles'
+import { theme } from './theme.js'
 import {
   createMemoryRouter,
   createRoutesFromElements,
@@ -38,8 +40,11 @@ const router = createMemoryRouter(
 )
 
 function App() {
+  let frontier = th
   return (
-    <RouterProvider router={router} />
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   ) 
 }
 
