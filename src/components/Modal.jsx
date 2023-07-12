@@ -5,7 +5,6 @@ import { Modal as MuiModal } from '@mui/material';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import useAppStateContext from '../hooks/useAppStateContext';
-import Grid, { Body, Title } from './Grid';
 import { useNavigate } from 'react-router-dom';
 
 const style = {
@@ -44,40 +43,16 @@ export default function Modal() {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Grid
-              sx={{
-                gridTemplateColumns: 'repeat(13, 1fr)',
-                gridTemplateRows: 'repeat(4, 0.5fr)',
-              }}
-            >
-              <Title
-                sx={{
-                  gridColumn: '1 / 13',
-                  alignSelf: 'justify-center',
-                  fontSize: '1.25rem',
-                  textAlign: 'center',
-                  fontWeight: 'medium',                        
-                }}
-              >
-                Are you sure you want to start over?
-              </Title>
-              <Body
-                sx={{
-                  gridColumn: '2 / 13',
-                  gridRow: '3 / 5',
-                  textAlign: 'end',
-                  gap: 2,
-                }}
-              >
-                <Button onClick={handleClose} variant='contained' color='warning'>
-                  Cancel
-                </Button>
-                <span className='tab' />
-                <Button onClick={handleConfirm} variant='contained' color='error'>
-                  Reset
-                </Button>
-              </Body>
-            </Grid>
+            <div className='font-object-sans'>
+               Are you sure you want to start over?
+            </div>
+            <Button onClick={handleClose} variant='contained' color='warning'>
+              Cancel
+            </Button>
+            <span className='tab' />
+            <Button onClick={handleConfirm} variant='contained' color='error'>
+              Reset
+            </Button>
           </Box>
         </Fade>
       </MuiModal>

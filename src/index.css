@@ -19,7 +19,14 @@
 
 
 body {
-  background-color: #141928;
+  background-color: #96FFF5;
+  font-family: "object-sans";
+}
+
+h1 {
+  font-family: "bandwidth";
+  font-size: 3rem;
+  color: #141928;
 }
 
 a {

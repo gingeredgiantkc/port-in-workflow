@@ -1,8 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  corePlugins: {
-    preflight: false,
-  },
+const defaultTheme = require("tailwindcss/defaultTheme");
+
+module.exports = {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
@@ -11,10 +9,10 @@ export default {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'custom': 'repeat(12, minmax(0px, 0.5fr))',
+        'custom': 'repeat(12, minmax(0, 1fr))',
       },
       gridTemplateRows: {
-        'custom': 'repeat(6, minmax(0px, 0.5fr))',
+        'custom': 'repeat(6, minmax(0, 0.5fr))',
       },
       colors: {
         'torch-red': {
@@ -61,10 +59,15 @@ export default {
         },
       },
       fontFamily: {
-        midpoint-pro: ['midpoint-pro', 'oblique'],
+        'bandwidth': [ 'bandwidth' ],
+        'object-sans': [ 'object-sans', 'sans' ]
       },
+    },
+    fontFamily: {
+      'sans': [ 'object-sans', ...defaultTheme.fontFamily.sans ],
+      'serif': [ ...defaultTheme.fontFamily.serif ],
+      'mono': [ ...defaultTheme.fontFamily.mono ]
     },
   },
   plugins: [],
-}
-
+};

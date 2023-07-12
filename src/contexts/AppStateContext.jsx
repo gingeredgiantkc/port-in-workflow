@@ -6,7 +6,7 @@ export const AppStateProvider = ({ children }) => {
 
   const pages = {
     '/': 'Getting Started',
-    '/existing-service': 'Existing Services',
+    '/existing-service': 'Current Services',
     '/existing-service/check-portability': 'Check Portability',
     '/existing-service/check-portability/provider-info': 'Provider Info',
     '/existing-service/provider-info': 'Provider Info',
@@ -17,7 +17,7 @@ export const AppStateProvider = ({ children }) => {
     '/existing-service/check-portability/provider-info/precheck-confirm': 'Confirm',
   }
 
-  const defaultValue = '/'
+  const defaultValue = ''
   const defaultOpen = false
 
   const [value, setValue] = useState(defaultValue)
@@ -27,7 +27,7 @@ export const AppStateProvider = ({ children }) => {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const handleReset = () => {
-    setValue(defaultValue);
+    setValue(`/${defaultValue}`);
     setOpen(defaultOpen);
     setFirstPage(true)
   }
