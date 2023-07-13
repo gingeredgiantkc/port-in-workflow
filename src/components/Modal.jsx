@@ -20,12 +20,11 @@ const style = {
 };
 
 export default function Modal() {
-  const { value, open, handleClose, handleReset } = useAppStateContext()
+  const { open, handleClose, handleReset } = useAppStateContext()
   const navigate = useNavigate()
   const handleConfirm = () => {
     handleReset();
     navigate('/');
-    console.log(value);
     handleClose();
   }
   return (

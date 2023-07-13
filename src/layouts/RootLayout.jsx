@@ -1,5 +1,5 @@
 import React from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import {
   Box,
   IconButton,
@@ -13,30 +13,16 @@ import Modal from '../components/Modal'
 import { theme } from '../theme'
 
 function RootLayout() {
-  const { pages, value, handleOpen, firstPage, setFirstPage } = useAppStateContext()
-
+  const { handleOpen, path, firstPage, setFirstPage } = useAppStateContext()
   let navigate = useNavigate()
-  let location = useLocation()
-
-  console.log('pages:', pages)
-
-  const goNext = () => {
-    if (firstPage) {
-      navigate('/existing-service')
-      setFirstPage(!firstPage)
-    } else {
-      const nextPage = location.pathname + `/${value}`
-      navigate(nextPage)
-    }
+  const handleClick = () => {
+    firstPage ? navigate('/existing-service') : navigate(path);
+    setFirstPage(false);
   }
-
-  const goBack = () => {
-    navigate(-1)
-  }
-
+  console.log("path", path)
   return (
     <ThemeProvider theme={theme}>
-      <div className='bg-midnight-express w-3/4 h-screen mx-auto rounded-s-sm grid grid-cols-12 grid-rows-6'>
+      <div className='bg-midnight-express shadow-xl shadow-slate-800 w-3/4 h-screen mx-auto rounded-s-sm grid grid-cols-12 grid-rows-6'>
         <div className='col-start-1 col-end-3 row-span-full bg-torch-red border-r-4 border-r-white pt-32'>
           <div className='flex flex-col flex-wrap'>
             <Breadcrumbs />
@@ -67,7 +53,7 @@ function RootLayout() {
           <IconButton
             sx={{ fontSize: '4rem' }}
             variant='contained'
-            onClick={goNext}
+            onClick={handleClick}
             color='primary'
             size='large'
           >

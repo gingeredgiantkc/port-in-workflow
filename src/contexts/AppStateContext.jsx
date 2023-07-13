@@ -19,17 +19,20 @@ export const AppStateProvider = ({ children }) => {
 
   const defaultValue = ''
   const defaultOpen = false
+  const defaultPath = '/'
 
   const [value, setValue] = useState(defaultValue)
   const [open, setOpen] = useState(defaultOpen)
   const [firstPage, setFirstPage] = useState(true)
+  const [path, setPath] = useState(defaultPath)
 
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const handleReset = () => {
-    setValue(`/${defaultValue}`);
+    setValue(defaultValue);
+    setPath('/');
     setOpen(defaultOpen);
-    setFirstPage(true)
+    setFirstPage(true);
   }
   
   return (
@@ -39,6 +42,8 @@ export const AppStateProvider = ({ children }) => {
         defaultValue,
         defaultOpen,
         open,
+        path,
+        setPath,
         handleOpen,
         handleClose,
         handleReset,

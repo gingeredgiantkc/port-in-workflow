@@ -12,7 +12,7 @@ import RootLayout from './layouts/RootLayout'
 // pages
 import Home from './pages/Home'
 import PrecheckConfirm from './pages/PrecheckConfirm'
-import ExistingService from './pages/ExistingService'
+import ExistingService from './pages/ExistingServices'
 import CheckPortability from './pages/CheckPortability'
 import ProviderInfo from './pages/ProviderInfo'
 import EndingNoInfo from './pages/end/EndingNoInfo'

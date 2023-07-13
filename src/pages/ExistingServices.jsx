@@ -1,10 +1,22 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import { FormControlLabel, FormControl, Radio, RadioGroup } from '@mui/material'
+import { Field, Form, Formik } from 'formik'
 import useAppStateContext from '../hooks/useAppStateContext'
 import Title from '../components/Title'
+import { useLocation } from 'react-router-dom'
 
 export default function ExistingService() {
-  const { value, setValue } = useAppStateContext()
+  const { value, setValue, setPath } = useAppStateContext()
+  let location = useLocation()
+  
+  useEffect(function() {
+    const timeout = setTimeout(function() {
+      setPath(location.pathname + '/' + value)
+    }, 1000)
+    return function() {
+      clearTimeout(timeout)
+    }
+  }, [value])
 
   return (
     <Fragment>
