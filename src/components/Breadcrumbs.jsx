@@ -4,7 +4,7 @@ import { Breadcrumbs as MuiBreadcrumbs, Link, Typography } from '@mui/material'
 import useAppStateContext from '../hooks/useAppStateContext'
 
 function LinkRouter(props) {
-  return <Link {...props} component={RouterLink} />
+  return <Link {...props} className='hover:text-slate-300' component={RouterLink} />
 }
 
 function Breadcrumbs() {
@@ -23,7 +23,7 @@ function Breadcrumbs() {
             <Typography color="primary" key={name}>{pages[routeTo]}</Typography>
           </div>
         ) : (
-          <div className='flex-none w-[194px] text-justify pl-4 gap-6 hover:text-slate-300'>
+          <div className='flex-none w-[194px] text-justify pl-4 gap-6'>
             <LinkRouter color="#ffffff" key={name} to={routeTo}>{pages[routeTo]}</LinkRouter>
           </div>
         )

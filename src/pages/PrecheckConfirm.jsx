@@ -1,6 +1,4 @@
 import React, { Fragment } from 'react'
-import useAppStateContext from '../hooks/useAppStateContext'
-import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import Title from '../components/Title';
 
 export default function PrecheckConfirm() {
