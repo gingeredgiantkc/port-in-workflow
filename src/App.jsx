@@ -8,9 +8,10 @@ import {
 
 // layouts
 import RootLayout from './layouts/RootLayout'
+import ProcessLayout from './layouts/ProcessLayout'
 import LastPage from './layouts/LastPage'
 
-// pages
+// pre-check pages
 import Home from './pages/Home'
 import PrecheckConfirm from './pages/PrecheckConfirm'
 import ExistingService from './pages/ExistingServices'
@@ -22,6 +23,7 @@ import EndingTransferToSales from './pages/end/EndingTransferToSales'
 import ActiveNumber from './pages/ActiveNumber'
 import EndingInactive from './pages/end/EndingInactive'
 
+// routes
 const router = createMemoryRouter(
   createRoutesFromElements(
     <Fragment>
@@ -42,6 +44,7 @@ const router = createMemoryRouter(
         <Route path='existing-service/active-number/provider-info/ending-no-info' element={<EndingNoInfo />} />
         <Route path='existing-service/ending-transfer' element={<EndingTransferToSales />} />
       </Route>
+      <Route path='/workflow' element={<ProcessLayout />} />
       <Route path='/complete' element={<LastPage />} />
     </Fragment>
   )

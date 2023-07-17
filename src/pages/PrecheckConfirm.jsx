@@ -7,7 +7,7 @@ export default function PrecheckConfirm() {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setPath("/complete")
+      setPath("/workflow")
     }, 500)
     return () => {
       clearTimeout(timeout)
