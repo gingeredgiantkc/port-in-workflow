@@ -3,18 +3,18 @@ import useAppStateContext from '../hooks/useAppStateContext'
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import Title from '../components/Title';
 
-export default function ProviderInfo() {
+export default function ActiveNumber() {
   const { value, setValue } = useAppStateContext()
   
   return (
     <Fragment>
-      <Title label="Provider Info" />
+      <Title label="Active Telephone Number" />
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
             <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              An account number and PIN/password are required for porting telephone numbers. Confirm that the customer has the account number and PIN/password from the current provider.<br /><br />
-              <i>Is the customer able to provide you with this information?</i>
+              In order to be eligible for porting, a telephone number must be associated with a currently active line of voice service. Lines that have already been cancelled or are pending cancellation cannot be ported in or out of a network.<br /><br />
+              <i>Does the customer confirm that the requested number is associated with an active line of service from his/her current provider?</i>
               <FormControl
                 sx={{
                   '& .MuiFormControlLabel-label': {
@@ -41,7 +41,7 @@ export default function ProviderInfo() {
                       />
                     }
                     label='Yes'
-                    value='/precheck-confirm'
+                    value='/provider-info'
                   />
                   <FormControlLabel
                     control={
@@ -56,7 +56,7 @@ export default function ProviderInfo() {
                       />
                     }
                     label='No'
-                    value='/ending-no-info'
+                    value='/ending-inactive'
                   />
                 </RadioGroup>
               </FormControl>

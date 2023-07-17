@@ -6,7 +6,7 @@ import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@
 import useAppStateContext from '../../hooks/useAppStateContext'
 import { useLocation } from 'react-router-dom'
 
-export default function EndingTransferToSales() {
+export default function EndingInactive() {
   const { state, setState, setPath } = useAppStateContext()
   const { item1, item2, item3, item4, item5, item6 } = state;
   const location = useLocation()
@@ -34,12 +34,12 @@ export default function EndingTransferToSales() {
 
   return (
     <Fragment>
-      <Title label="Ending: Transfer" />
+      <Title label="Ending: Inactive Number" />
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
-            <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              <p className='my-2'>Callers without active Frontier accounts/orders who wish to establish data service should be transferred to Sales.</p>
+            <div className='flex flex-col flex-wrap text-white font-medium ml-6 mt-4'>
+              <p className='my-2'>The telephone number is not eligible to port-in.</p>
               <FormControl sx={{ marginX: 3, marginBottom: 3 }} component="fieldset" variant="standard">
                 <FormLabel
                   sx={{
@@ -63,7 +63,7 @@ export default function EndingTransferToSales() {
                         name="item1"
                       />
                     }
-                    label="Gain permission from your supervisor to transfer the call to Sales."
+                    label="Explain to the customer that only numbers assigned to active voice lines can be ported-in."
                   />
                   <FormControlLabel
                     sx={{ marginY: 1 }}

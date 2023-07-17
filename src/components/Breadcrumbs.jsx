@@ -11,19 +11,18 @@ function Breadcrumbs() {
   const { pages } = useAppStateContext()
   let location = useLocation()
   const pathnames = location.pathname.split('/').filter(x => x)
-  console.log(pathnames)
   
   return (
-    <MuiBreadcrumbs aria-label="breadcrumb">
+    <MuiBreadcrumbs separator="" aria-label="breadcrumb">
       {pathnames.map((name, index) => {
         const isLast = index === pathnames.length - 1
         const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
         return isLast ? (
-          <div className='flex-none w-[194px] text-justify pl-4 gap-6'>
+          <div className='flex-none w-[194px] text-justify pl-3 pb-6 gap-6'>
             <Typography color="primary" key={name}>{pages[routeTo]}</Typography>
           </div>
         ) : (
-          <div className='flex-none w-[194px] text-justify pl-4 gap-6'>
+          <div className='flex-none w-[194px] text-justify pl-3 pb-6 gap-6'>
             <LinkRouter color="#ffffff" key={name} to={routeTo}>{pages[routeTo]}</LinkRouter>
           </div>
         )
