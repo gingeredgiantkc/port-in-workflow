@@ -11,35 +11,28 @@ export default function Home() {
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
             <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              <p>
-                This tool can be used by agents to help determine if a telephone<br />
-                number is eligible to be ported-in from a competitor's network<br />
-                to Frontier.
+              <p className='my-2 ml-2'>
+                This tool can be used by agents to help determine if a telephone number is eligible to be ported-in from a competitor's network to Frontier.
               </p>
-              <br />
-              <p>Agents can...</p>
-              <br />
-              <p>
+              <p className='my-2 ml-2'>Agents can...</p>
+              <p className='my-2 ml-2'>
                 ...navigate to the next step using the {"   "}
                   <span className='inline-flex'>
                     <ArrowCircleRightIcon color="primary" />
                   </span>
                 {"   "} button,
               </p>
-              <br />
-              <p>
+              <p className='my-2 ml-2'>
                 ...start from the beginning by clicking {"   "}
                 <span className='inline-flex'>
                   <ReplayCircleFilledIcon color="primary" />
                 </span>
                 {"   "} ,
               </p>
-              <br />
-              <p>
+              <p className='my-2 ml-2'>
                 ...and revisit previous steps with the links in the left panel.
               </p>
-              <br />
-              <p>
+              <p className='my-2 ml-2'>
                 Click {"   "}
                 <span className='inline-flex'>
                   <ArrowCircleRightIcon color='primary' />

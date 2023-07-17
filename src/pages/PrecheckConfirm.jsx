@@ -4,7 +4,7 @@ import useAppStateContext from '../hooks/useAppStateContext';
 
 export default function PrecheckConfirm() {
   const { setPath } = useAppStateContext()
-  
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setPath("/complete")
@@ -21,8 +21,10 @@ export default function PrecheckConfirm() {
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
             <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              <p className='my-2'>
-                Everything looks good!<br /><br />
+              <p className='my-2 ml-2'>
+                Everything looks good!
+              </p>
+              <p className='my-2 ml-2'>
                 Now that you've pre-checked the portability of the customer's telephone number, use the steps outlined in the F[ONE] article <a href='https://kb.ftr.com/Pages/PI-WT---Port-In---Order-Entry.aspx' target='_blank' rel='noopener noreferrer'>PI/WT - Port In Order Entry</a> to complete the order.
               </p>
             </div>

@@ -9,17 +9,17 @@ export const AppStateProvider = ({ children }) => {
     '/existing-service': 'Current Services',
     '/existing-service/check-portability': 'Check Portability',
     '/existing-service/check-portability/active-number': 'Active Number',
-    '/existing-service/check-portability/ending-not-portable': 'Ending the Call',
+    '/existing-service/check-portability/ending-not-portable': 'End',
     '/existing-service/check-portability/active-number/provider-info': 'Provider Info',
-    '/existing-service/check-portability/active-number/ending-inactive': 'Ending the Call',
-    '/existing-service/check-portability/active-number/provider-info/precheck-confirm': 'Confirm',
-    '/existing-service/check-portability/active-number/provider-info/ending-no-info': 'Ending the Call',
+    '/existing-service/check-portability/active-number/ending-inactive': 'End',
+    '/existing-service/check-portability/active-number/provider-info/precheck-confirm': 'Complete',
+    '/existing-service/check-portability/active-number/provider-info/ending-no-info': 'End',
     '/existing-service/active-number': 'Active Number',
     '/existing-service/active-number/provider-info': 'Provider Info',
-    '/existing-service/active-number/ending-inactive': 'Ending the Call',
+    '/existing-service/active-number/ending-inactive': 'End: Inactive',
     '/existing-service/active-number/provider-info/precheck-confirm': 'Confirm',
-    '/existing-service/active-number/provider-info/ending-no-info': 'Ending the Call',
-    '/existing-service/ending-transfer': 'Ending the Call',
+    '/existing-service/active-number/provider-info/ending-no-info': 'End',
+    '/existing-service/ending-transfer': 'End',
   }
 
   const defaultValue = 'existing-service'
@@ -44,7 +44,7 @@ export const AppStateProvider = ({ children }) => {
   const handleReset = () => {
     setState(false);
     setValue(defaultValue);
-    setPath(defaultPath);
+    setPath('/existing-service');
     setOpen(defaultOpen);
     setFirstPage(true);
   }

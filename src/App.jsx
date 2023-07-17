@@ -4,11 +4,11 @@ import {
   createRoutesFromElements,
   Route,
   RouterProvider,
-  Routes,
   } from 'react-router-dom'
 
 // layouts
 import RootLayout from './layouts/RootLayout'
+import LastPage from './layouts/LastPage'
 
 // pages
 import Home from './pages/Home'
@@ -21,7 +21,6 @@ import EndingNotPortable from './pages/end/EndingNotPortable'
 import EndingTransferToSales from './pages/end/EndingTransferToSales'
 import ActiveNumber from './pages/ActiveNumber'
 import EndingInactive from './pages/end/EndingInactive'
-import LastPage from './layouts/LastPage'
 
 const router = createMemoryRouter(
   createRoutesFromElements(
@@ -48,10 +47,8 @@ const router = createMemoryRouter(
   )
 )
 
-function App() {
+export default function App() {
   return (
     <RouterProvider router={router} />
   ) 
 }
-
-export default App

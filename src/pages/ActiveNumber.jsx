@@ -13,18 +13,24 @@ export default function ActiveNumber() {
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
             <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              In order to be eligible for porting, a telephone number must be associated with a currently active line of voice service. Lines that have already been cancelled or are pending cancellation cannot be ported in or out of a network.<br /><br />
-              <i>Does the customer confirm that the requested number is associated with an active line of service from his/her current provider?</i>
+              <p className='my-2 ml-2'>
+                In order to be eligible for porting, a telephone number must be associated with a currently active line of voice service.
+              </p>
+              <p className='my-2 ml-2'>  
+                Lines that have already been cancelled or are pending cancellation cannot be ported in or out of a network.
+              </p>
+              <p className='my-2 ml-2 italic'>
+                Does the customer confirm that the requested number is associated with an active line of service from his/her current provider?
+              </p>
               <FormControl
                 sx={{
                   '& .MuiFormControlLabel-label': {
                     fontSize: '0.9rem',
                     fontWeight: 'medium',
                     flexGrow: 1,
-                    paddingTop: 2,
-                    paddingBottom: 1,
                     textAlign: 'justify',
                   },
+                  marginLeft: 2,
                 }}
               >
                 <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>

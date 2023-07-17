@@ -13,7 +13,7 @@ export default function CheckPortability() {
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
             <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              <p>
+              <p className='my-2 ml-2'>
               TIP: Make note of the services the customer currently has with Frontier and their plans/tiers so that you have them later when writing the order.<br /><br />
               Take a moment to check if the telephone number can be ported into the customer's exchange.<br /><br />
               Open {"   "}
@@ -22,9 +22,8 @@ export default function CheckPortability() {
                   </a>
               {"   "} and click Options {'>'} NPA/NXX Lookup, and use the tool at the bottom of the screen to determine if the telephone number can be ported-in.
               </p>
-              <br />
-              <p>
-              <i>Can the phone number be ported from the customer's current provider to Frontier?</i>
+              <p className='my-2 ml-2 italic'>
+                Can the phone number be ported from the customer's current provider to Frontier?
               </p>
               <FormControl
                 sx={{
@@ -32,10 +31,9 @@ export default function CheckPortability() {
                     fontSize: '0.9rem',
                     fontWeight: 'medium',
                     flexGrow: 1,
-                    paddingTop: 2,
-                    paddingBottom: 1,
                     textAlign: 'justify',
                   },
+                  marginLeft: 2
                 }}
               >
                 <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>

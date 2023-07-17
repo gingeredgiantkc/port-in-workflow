@@ -26,7 +26,7 @@ function RootLayout() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className='bg-midnight-express shadow-xl shadow-slate-800 w-3/4 h-fit mx-auto rounded-s-sm grid grid-cols-12 grid-rows-6'>
+      <div className='bg-midnight-express shadow-xl shadow-slate-800 w-3/4 h-screen mx-auto rounded-s-sm grid grid-cols-12 grid-rows-6'>
         <div className='col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white' />
         <div className='row-start-2 row-span-full col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white'>
           <div className='flex flex-col flex-wrap justify-self-center'>
@@ -36,7 +36,7 @@ function RootLayout() {
         <div className='row-start-1 col-start-3 col-end-13 row-span-5'>
           <Outlet />
         </div>
-        <div className='row-start-6 col-start-3 col-end-13 self-start justify-self-end'>
+        <div className='row-start-6 col-start-3 col-end-13 self-center justify-self-end'>
           <IconButton
             sx={{ fontSize: '4rem' }}
             variant='contained'
@@ -56,8 +56,8 @@ function RootLayout() {
             <ArrowCircleRightIcon fontSize='inherit' />
           </IconButton>
         </div>
+        <Modal />
       </div>
-      <Modal />
     </ThemeProvider>
   )
 }

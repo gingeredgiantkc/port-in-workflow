@@ -45,7 +45,7 @@ export default function Modal() {
             <div className='font-object-sans'>
                Are you sure you want to start over?
             </div>
-            <Button onClick={handleClose} variant='contained' color='warning'>
+            <Button onClick={handleClose} variant='contained' color='secondary'>
               Cancel
             </Button>
             <span className='tab' />
@@ -56,5 +56,5 @@ export default function Modal() {
         </Fade>
       </MuiModal>
     </div>
-  );
+  )
 }

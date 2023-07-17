@@ -13,18 +13,24 @@ export default function ProviderInfo() {
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
             <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-              An account number and PIN/password are required for porting telephone numbers. Confirm that the customer has the account number and PIN/password from the current provider.<br /><br />
-              <i>Is the customer able to provide you with this information?</i>
+              <p className='my-2 ml-2'>
+                An account number and PIN/password are required for porting telephone numbers.
+              </p>
+              <p className='my-2 ml-2'>
+                Confirm that the customer has the account number and PIN/password from the current provider.
+              </p>
+              <p className='my-2 ml-2 italic'>
+                Is the customer able to provide you with this information?
+              </p>
               <FormControl
                 sx={{
                   '& .MuiFormControlLabel-label': {
                     fontSize: '0.9rem',
                     fontWeight: 'medium',
                     flexGrow: 1,
-                    paddingTop: 2,
-                    paddingBottom: 1,
                     textAlign: 'justify',
                   },
+                  marginLeft: 2,
                 }}
               >
                 <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>

@@ -8,25 +8,23 @@ export default function ExistingService() {
 
   return (
     <Fragment>
-      <Title label="Current Service(s)" />
+      <Title label="Current Services" />
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
         <div className='grid grid-cols-12 grid-rows-6'>
           <div className='col-start-1 col-end-9 row-span-5'>
-            <div className='flex flex-col flex-wrap text-white font-medium ml-6 mt-4'>
-              <p className='my-2'>
+            <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
+              <p className='my-2 ml-2'>
                 Residential CARE Account Services specialists only process a port-in/winback when:
               </p>
-              <p className='my-2'>
+              <p className='my-2 ml-2'>
                 1. The customer is wanting to establish a new voice-only account,
-                <br />
-                OR
-                <br />
+                <p className='my-1 ml-4'>OR</p>
                 2. The customer already has an active account or pending service order to establish service(s).
               </p>
-              <p className='my-2'>
+              <p className='my-2 ml-2'>
                 Use The HUB, DPI, and other tools to search for any currently active accounts and/or pending orders.
               </p>
-              <p className='italic my-2'>
+              <p className='italic my-2 ml-2'>
                 Does the customer have an existing account/order, and is the customer establishing a voice-only account?
               </p>
               <FormControl
@@ -39,6 +37,7 @@ export default function ExistingService() {
                     marginY: 1,
                     textAlign: 'justify',
                   },
+                  marginLeft: 2
                 }}
               >
                 <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
