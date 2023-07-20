@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import useAppStateContext from '../hooks/useAppStateContext'
+import useAppStateContext from '../../hooks/useAppStateContext'
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import Title from '../components/Title';
+import Title from '../../components/Title';
 
 export default function ProviderInfo() {
   const { value, setValue } = useAppStateContext()

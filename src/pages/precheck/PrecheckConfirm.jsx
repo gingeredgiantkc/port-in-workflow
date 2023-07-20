@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react'
-import Title from '../components/Title';
-import useAppStateContext from '../hooks/useAppStateContext';
+import Title from '../../components/Title';
+import useAppStateContext from '../../hooks/useAppStateContext';
 
 export default function PrecheckConfirm() {
   const { setPath } = useAppStateContext()

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
-import Title from '../components/Title'
+import Title from '../../components/Title'
 
 export default function Home() {
   return (

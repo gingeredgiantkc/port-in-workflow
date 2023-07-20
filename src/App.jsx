@@ -12,16 +12,9 @@ import ProcessLayout from './layouts/ProcessLayout'
 import LastPage from './layouts/LastPage'
 
 // pre-check pages
-import Home from './pages/Home'
-import PrecheckConfirm from './pages/PrecheckConfirm'
-import ExistingService from './pages/ExistingServices'
-import CheckPortability from './pages/CheckPortability'
-import ProviderInfo from './pages/ProviderInfo'
-import EndingNoInfo from './pages/end/EndingNoInfo'
-import EndingNotPortable from './pages/end/EndingNotPortable'
-import EndingTransferToSales from './pages/end/EndingTransferToSales'
-import ActiveNumber from './pages/ActiveNumber'
-import EndingInactive from './pages/end/EndingInactive'
+import { ActiveNumber, CheckPortability, ExistingService, Home, PrecheckConfirm, ProviderInfo } from './pages/precheck'
+// end pages
+import { EndingInactive, EndingNoInfo, EndingNotPortable, EndingTransferToSales } from './pages/end'
 
 // routes
 const router = createMemoryRouter(

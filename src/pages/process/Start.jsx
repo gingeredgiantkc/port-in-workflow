@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Start() {
   return (
-    <div>Start</div>
+    <Title label="Start" />
   )
 }
 

@@ -8,15 +8,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Modal from '../components/Modal'
 import { theme } from '../theme'
 import useProcessFlowContext from '../hooks/useProcessFlowContext'
-import Start from '../pages/process/Start'
-import Prospect from '../pages/process/Prospect'
-import Order from '../pages/process/Order'
-import Credit from '../pages/process/Credit'
-import Provider from '../pages/process/Provider'
-import Billing from '../pages/process/Billing'
-import Appointment from '../pages/process/Appointment'
-import Review from '../pages/process/Review'
-import End from '../pages/process/End'
+import { Appointment, Billing, Credit, End, Order, Prospect, Provider, Review, Start } from '../pages/process'
 
 export default function ProcessLayout() {
   const { steps, stepNumber, handleOpen, handleNextStep, handlePrevStep } = useProcessFlowContext()
