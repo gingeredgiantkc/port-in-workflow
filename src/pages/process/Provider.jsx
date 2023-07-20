@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Provider() {
   return (
-    <div>Provider</div>
+    <Title label="Port-In Assignment" />
   )
 }
 

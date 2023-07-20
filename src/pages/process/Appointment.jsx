@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Appointment() {
   return (
-    <div>Appointment</div>
+    <Title label="Appointment" />
   )
 }
 

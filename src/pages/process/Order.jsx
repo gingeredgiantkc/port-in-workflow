@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Order() {
   return (
-    <div>Order</div>
+    <Title label="Create New Order" />
   )
 }
 

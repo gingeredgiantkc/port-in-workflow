@@ -3,7 +3,7 @@ import Title from '../../components/Title'
 
 function Start() {
   return (
-    <Title label="Start" />
+    <Title label="PI/WT Order Entry" />
   )
 }
 

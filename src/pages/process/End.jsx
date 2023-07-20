@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function End() {
   return (
-    <div>End</div>
+    <Title label="Close the Call" />
   )
 }
 

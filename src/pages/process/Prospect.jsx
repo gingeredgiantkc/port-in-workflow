@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Prospect() {
   return (
-    <div>Prospect</div>
+    <Title label="Create a Prospect" />
   )
 }
 

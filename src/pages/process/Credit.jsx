@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Credit() {
   return (
-    <div>Credit</div>
+    <Title label="Credit Check" />
   )
 }
 

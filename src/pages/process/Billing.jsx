@@ -1,8 +1,9 @@
 import React from 'react'
+import Title from '../../components/Title'
 
 function Billing() {
   return (
-    <div>Billing</div>
+    <Title label="Billing" />
   )
 }
 
