@@ -37,7 +37,7 @@ export default function EndingTransferToSales() {
       <Title label="Ending: Transfer" />
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
         <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-          <p className='my-2'>Callers without active Frontier accounts/orders who wish to establish data service should be transferred to Sales.</p>
+          <p className='my-2 mr-8'>Callers without active Frontier accounts/orders who wish to establish data service should be transferred to Sales.</p>
           <FormControl sx={{ marginX: 3, marginBottom: 3 }} component="fieldset" variant="standard">
             <FormLabel
               sx={{
@@ -51,7 +51,7 @@ export default function EndingTransferToSales() {
             </FormLabel>
             <FormGroup>
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -64,7 +64,7 @@ export default function EndingTransferToSales() {
                 label="Gain permission from your supervisor to transfer the call to Sales."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -77,7 +77,7 @@ export default function EndingTransferToSales() {
                 label="Recap the details of the call with the customer."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -90,7 +90,7 @@ export default function EndingTransferToSales() {
                 label='Give closing statements (i.e., "My goal is to ensure your satisfaction. Have I resolved the reasons for your call today?").'
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -103,7 +103,7 @@ export default function EndingTransferToSales() {
                 label="Complete the contact by selecting the appropriate call disposition."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -116,7 +116,7 @@ export default function EndingTransferToSales() {
                 label="Finishing entering your notes of the interaction in The HUB."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}

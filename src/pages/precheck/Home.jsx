@@ -8,7 +8,6 @@ export default function Home() {
     <Fragment>
       <Title label="Port-In Eligibility Tool" />
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
-
         <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
           <p className='my-2 ml-2 mr-8'>
             This tool can be used by agents to help determine if a telephone number is eligible to be ported-in from a competitor's network to Frontier.

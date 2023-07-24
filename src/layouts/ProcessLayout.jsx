@@ -1,20 +1,13 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { IconButton, ThemeProvider } from '@mui/material'
-import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
+import { ThemeProvider } from '@mui/material'
 import Breadcrumbs from '../components/Breadcrumbs'
-import Modal from '../components/Modal'
 import { theme } from '../theme'
 import useProcessFlowContext from '../hooks/useProcessFlowContext'
 import { Appointment, Billing, Credit, End, Order, Prospect, Provider, Review, Start } from '../pages/process'
 
 export default function ProcessLayout() {
-  const { steps, stepNumber, handleOpen, handleNextStep, handlePrevStep } = useProcessFlowContext()
-  const totalSteps = steps.length
-  const isLastStep = stepNumber === totalSteps
-  const navigate = useNavigate()
+  const { stepNumber, taskState } = useProcessFlowContext()
+  const { task1, task2, task3, task4, task5 } = taskState
 
   const displayStep = (step) => {
     switch(step) {
@@ -76,39 +69,9 @@ export default function ProcessLayout() {
             <Breadcrumbs />
           </div>
         </div>
-        <div className='row-start-1 col-start-3 col-end-13 row-span-5'>
+        <div className='row-start-1 col-start-3 col-end-13 row-span-6'>
           {displayStep(stepNumber)}
         </div>
-        <div className='row-start-6 col-start-3 col-end-13 self-center justify-self-end'>
-          <IconButton
-            sx={{ fontSize: '4rem' }}
-            variant='contained'
-            onClick={handleOpen}
-            color='primary'
-            size='large'
-          >
-            <ReplayCircleFilledIcon fontSize='inherit' />
-          </IconButton>
-          <IconButton
-            sx={{ fontSize: '4rem' }}
-            variant='contained'
-            onClick={stepNumber > 1 ? handlePrevStep : undefined}
-            color='primary'
-            size='large'
-          >
-            <ArrowCircleLeftIcon fontSize='inherit' />
-          </IconButton>
-          <IconButton
-            sx={{ fontSize: '4rem' }}
-            variant='contained'
-            onClick={isLastStep ? navigate("/complete") : handleNextStep}
-            color='primary'
-            size='large'
-          >
-            <ArrowCircleRightIcon fontSize='inherit' />
-          </IconButton>
-        </div>
-        <Modal />
       </div>
     </ThemeProvider>
   )

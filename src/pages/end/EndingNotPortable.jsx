@@ -37,7 +37,7 @@ export default function EndingNotPortable() {
       <Title label="Ending: Not Portable" />
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
         <div className='flex flex-col flex-wrap text-white font-medium ml-6 mt-4'>
-          <p className='my-2'>The telephone number is not eligible to port-in.</p>
+          <p className='my-2 mr-8'>The telephone number is not eligible to port-in.</p>
           <FormControl sx={{ marginX: 3, marginBottom: 3 }} component="fieldset" variant="standard">
             <FormLabel
               sx={{
@@ -51,7 +51,7 @@ export default function EndingNotPortable() {
             </FormLabel>
             <FormGroup>
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -64,7 +64,7 @@ export default function EndingNotPortable() {
                 label="Explain to the customer why we cannot port-in the requested telephone number."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -77,7 +77,7 @@ export default function EndingNotPortable() {
                 label="Recap the details of the call with the customer."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -90,7 +90,7 @@ export default function EndingNotPortable() {
                 label='Give closing statements (i.e., "My goal is to ensure your satisfaction. Have I resolved the reasons for your call today?").'
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -103,7 +103,7 @@ export default function EndingNotPortable() {
                 label="Complete the contact by selecting the appropriate call disposition."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
@@ -116,7 +116,7 @@ export default function EndingNotPortable() {
                 label="Finishing entering your notes of the interaction in The HUB."
               />
               <FormControlLabel
-                sx={{ marginY: 1 }}
+                sx={{ marginTop: 1 }}
                 control={
                   <Checkbox
                     icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
