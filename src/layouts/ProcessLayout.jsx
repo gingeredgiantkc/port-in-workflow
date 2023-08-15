@@ -63,9 +63,17 @@ export default function ProcessLayout() {
   return (
     <ThemeProvider theme={theme}>
       <div className='bg-midnight-express shadow-xl shadow-slate-800 w-3/4 h-screen mx-auto rounded-s-sm grid grid-cols-12 grid-rows-6'>
-        <div className='col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white' />
+        <div className='col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white px-10'>
+          <img src='./src/assets/frontier.svg'
+            alt='small logo'
+            style={{
+              width: "auto",
+              height: "100%",
+            }}
+          />
+        </div>
         <div className='row-start-2 row-span-full col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white'>
-          <div className='flex flex-col flex-wrap justify-self-center'>
+          <div className='flex flex-col flex-wrap xl:px-2 2xl:px-8 pt-4'>
             <Breadcrumbs />
           </div>
         </div>

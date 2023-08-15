@@ -23,7 +23,7 @@ export default function PrecheckConfirm() {
             Everything looks good!
           </p>
           <p className='my-2 ml-2 mr-8'>
-            Now that you've pre-checked the portability of the customer's telephone number, use the steps outlined in the F[ONE] article <a href='https://kb.ftr.com/Pages/PI-WT---Port-In---Order-Entry.aspx' target='_blank' rel='noopener noreferrer'>PI/WT - Port In Order Entry</a> to complete the order.
+            Now that you've pre-checked the portability of the customer's telephone number, use the steps outlined in the F[ONE] article <a className='text-lg text-electric-blue hover:text-electric-blue-600 underline font-semibold' href='https://kb.ftr.com/Pages/PI-WT---Port-In---Order-Entry.aspx' target='_blank' rel='noopener noreferrer'>PI/WT - Port In Order Entry</a> to complete the order.
           </p>
         </div>
       </div>
