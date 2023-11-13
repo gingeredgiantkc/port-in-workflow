@@ -7,6 +7,7 @@ import Breadcrumbs from '../components/Breadcrumbs'
 import Modal from '../components/Modal'
 import { theme } from '../theme'
 import RestartA from '../components/RestartA'
+import './layouts.css'
 
 function RootLayout() {
   const { handleOpen, setPath, path, value } = useAppStateContext()
@@ -26,38 +27,45 @@ function RootLayout() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className='bg-midnight-express shadow-xl shadow-slate-800 w-3/4 h-screen mx-auto rounded-s-sm grid grid-cols-12 grid-rows-6'>
-        <div className='col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white px-10'>
+      <div id="bg">
+        <div id="logo">
           <img src='./src/assets/frontier.svg'
             alt='small logo'
             style={{
-              width: "auto",
-              height: "100%",
+              fill: "#ff0037",
+              width: "100%",
+              height: "100%"
             }}
           />
         </div>
-        <div className='row-start-2 row-span-full col-start-1 col-end-3 bg-torch-red border-r-4 border-r-white'>
-          <div className='flex flex-col flex-wrap xl:px-2 2xl:px-8 pt-4'>
-            <Breadcrumbs />
+        <div id="band-1" />
+        <div id="band-2" />
+        <div id="band-3" />
+        <div className='body'>
+          <div className="left-pane">
+            <div className="breadcrumbs">
+              <Breadcrumbs />
+            </div>
+          </div>
+          <Outlet />
+          <div className="navigation">
+            <RestartA />
+            <IconButton
+              sx={{ fontSize: '4rem' }}
+              variant='contained'
+              onClick={handleClick}
+              color='primary'
+              size='large'
+            >
+              <ArrowCircleRightIcon fontSize='inherit' />
+            </IconButton>
           </div>
         </div>
-        <div className='row-start-1 col-start-3 col-end-13 row-span-5'>
-          <Outlet />
-        </div>
-        <div className='row-start-6 col-start-3 col-end-13 self-center justify-self-end'>
-          <RestartA />
-          <IconButton
-            sx={{ fontSize: '4rem' }}
-            variant='contained'
-            onClick={handleClick}
-            color='primary'
-            size='large'
-          >
-            <ArrowCircleRightIcon fontSize='inherit' />
-          </IconButton>
-        </div>
-        <Modal />
+        <div id="band-4" />
+        <div id="band-5" />
+        <div id="band-6" />
       </div>
+      <Modal />
     </ThemeProvider>
   )
 }

@@ -17,16 +17,30 @@
   src: url("/fonts/Bandwidth.otf");
 }
 
-
-body {
-  background-color: #96FFF5;
-  font-family: "object-sans";
+@font-face {
+  font-family: "Bandwidth Display RG";
+  src: url("/fonts/BandwidthDisplay_Rg.woff2");
 }
 
-h1 {
-  font-family: "bandwidth";
-  font-size: 3rem;
-  color: #141928;
+@font-face {
+  font-family: "PP Object Sans Bold";
+  src: url("/fonts/PPObjectSans-Bold.woff2");
+}
+
+@font-face {
+  font-family: "PP Object Sans Regular";
+  src: url("/fonts/PPObjectSans-Regular.woff2");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: #05122d;
+  margin: 0 auto;
 }
 
 /* a {

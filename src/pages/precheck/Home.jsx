@@ -2,11 +2,15 @@ import React, { Fragment } from 'react'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
 import Title from '../../components/Title'
+import './precheck.css'
 
 export default function Home() {
   return (
     <Fragment>
       <Title label="Port-In Eligibility Tool" />
+    </Fragment>
+    /*
+    <Fragment>
       <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
         <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
           <p className='my-2 ml-2 mr-8'>
@@ -39,6 +43,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-    </Fragment>
+    </Fragment> */
   )
 }
