@@ -17,7 +17,7 @@ export const AppStateProvider = ({ children }) => {
     '/existing-service/active-number': 'Active Number',
     '/existing-service/active-number/provider-info': 'Provider Info',
     '/existing-service/active-number/ending-inactive': 'End: Inactive',
-    '/existing-service/active-number/provider-info/precheck-confirm': 'Confirm',
+    '/existing-service/active-number/provider-info/precheck-confirm': 'Complete',
     '/existing-service/active-number/provider-info/ending-no-info': 'End',
     '/existing-service/ending-transfer': 'End',
   }

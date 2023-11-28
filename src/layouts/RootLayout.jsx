@@ -1,72 +1,55 @@
-import React, { useEffect } from 'react'
+import { Fragment, useEffect, useRef } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { IconButton, ThemeProvider } from '@mui/material'
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import useAppStateContext from '../hooks/useAppStateContext'
-import Breadcrumbs from '../components/Breadcrumbs'
 import Modal from '../components/Modal'
-import { theme } from '../theme'
-import RestartA from '../components/RestartA'
-import './layouts.css'
+import Button from '../components/buttons/Next'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft, faArrowRight, faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons'
 
 function RootLayout() {
-  const { handleOpen, setPath, path, value } = useAppStateContext()
+  const { setPath, path, value, handleOpen } = useAppStateContext()
+  const isFirstRender = useRef(true)
   let navigate = useNavigate()
   let location = useLocation()
-  const handleClick = () => navigate(path)  
   
-  console.log("path", path)
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false
+      return
+    }
     const timeout = setTimeout(() => {
       setPath(location.pathname + value)
     }, 500)
     return () => {
       clearTimeout(timeout)
+      console.log("url to next page is: ", path)
     }
   }, [value])
 
   return (
-    <ThemeProvider theme={theme}>
-      <div id="bg">
-        <div id="logo">
-          <img src='./src/assets/frontier.svg'
-            alt='small logo'
-            style={{
-              fill: "#ff0037",
-              width: "100%",
-              height: "100%"
-            }}
-          />
-        </div>
-        <div id="band-1" />
-        <div id="band-2" />
-        <div id="band-3" />
-        <div className='body'>
-          <div className="left-pane">
-            <div className="breadcrumbs">
-              <Breadcrumbs />
-            </div>
+    <Fragment>
+      <main id="main" className="grid-container-1">
+        <div id="band-1"></div>
+        <div id="band-2"></div>
+        <div id="band-3"></div>
+        <img id="logo" src='./src/assets/frontier.svg' className="grid-item-1"/>
+        <div id="window" className="grid-item-2 grid-container-2">
+          <div id="nav-btns" className="grid-item-1">
+            <Button onClick={() => handleOpen()}>
+              <FontAwesomeIcon icon={faArrowRotateLeft} inverse fixedWidth />
+            </Button>
+            <Button onClick={() => navigate(-1)}>
+              <FontAwesomeIcon icon={faArrowLeft} inverse fixedWidth />
+            </Button>
+            <Button onClick={() => navigate(path)}>
+              <FontAwesomeIcon icon={faArrowRight} inverse fixedWidth />
+            </Button>
           </div>
           <Outlet />
-          <div className="navigation">
-            <RestartA />
-            <IconButton
-              sx={{ fontSize: '4rem' }}
-              variant='contained'
-              onClick={handleClick}
-              color='primary'
-              size='large'
-            >
-              <ArrowCircleRightIcon fontSize='inherit' />
-            </IconButton>
-          </div>
         </div>
-        <div id="band-4" />
-        <div id="band-5" />
-        <div id="band-6" />
-      </div>
+      </main>
       <Modal />
-    </ThemeProvider>
+    </Fragment>
   )
 }
 

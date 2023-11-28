@@ -35,7 +35,10 @@ export default function RestartA() {
   return (
     <Fragment>
       <IconButton
-        sx={{ fontSize: '4rem' }}
+        sx={{
+          fontSize: '4rem',
+          boxShadow: ''
+        }}
         variant='contained'
         onClick={handleClickOpen}
         color='primary'
@@ -78,7 +81,7 @@ export default function RestartA() {
               paddingTop: 2,
             }}
           >
-            <p>Restart from...</p>
+            {"Restart from..."}
             <FormControl
               sx={{
                 '& .MuiFormControlLabel-label': {

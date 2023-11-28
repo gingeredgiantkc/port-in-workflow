@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import {
-  createMemoryRouter,
+  createBrowserRouter,
   createRoutesFromElements,
   Route,
   RouterProvider,
@@ -17,7 +17,7 @@ import { ActiveNumber, CheckPortability, ExistingService, Home, PrecheckConfirm,
 import { EndingInactive, EndingNoInfo, EndingNotPortable, EndingTransferToSales } from './pages/end'
 
 // routes
-const router = createMemoryRouter(
+const router = createBrowserRouter(
   createRoutesFromElements(
     <Fragment>
       <Route path='/' element={<RootLayout />}>

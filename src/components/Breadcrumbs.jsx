@@ -1,10 +1,10 @@
-import * as React from 'react'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { Breadcrumbs as MuiBreadcrumbs, Link, Typography } from '@mui/material'
 import useAppStateContext from '../hooks/useAppStateContext'
+import './components.css'
 
 function LinkRouter(props) {
-  return <Link {...props} className='hover:text-slate-300' component={RouterLink} />
+  return <Link {...props} className="hover:cursor-pointer hover:font-bold no-underline" component={RouterLink} />
 }
 
 function Breadcrumbs() {
@@ -13,19 +13,29 @@ function Breadcrumbs() {
   const pathnames = location.pathname.split('/').filter(x => x)
   
   return (
-    <MuiBreadcrumbs separator="" aria-label="breadcrumb">
-      {pathnames.map((name, index) => {
+    <MuiBreadcrumbs sx={{
+      '& .MuiBreadcrumbs-separator': {
+        display: 'none'
+        }
+      }} separator="" aria-label="breadcrumb">
+      {pathnames.map((value, index) => {
         const isLast = index === pathnames.length - 1
         const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
         return isLast ? (
-          <div className='flex-none w-[194px] text-justify pl-3 pb-6 gap-6'>
-            <Typography color="primary" key={name}>{pages[routeTo]}</Typography>
-          </div>
+          <Typography sx={{
+              paddingTop: '2px',
+              paddingLeft: '2px',
+              fontFamily: 'PP Object Sans Regular',
+              fontSize: '1rem'
+            }} color="#05122d" key={index}>{pages[routeTo]}</Typography>
         ) : (
-          <div className='flex-none w-[194px] text-justify pl-3 pb-6 gap-6'>
-            <LinkRouter color="#ffffff" key={name} to={routeTo}>{pages[routeTo]}</LinkRouter>
-          </div>
-        )
+          <LinkRouter sx={{
+              paddingTop: '2px',
+              paddingLeft: '2px',
+              fontFamily: 'PP Object Sans Regular',
+              fontSize: '1rem'
+            }} color="#262626" key={index} to={routeTo}>{pages[routeTo]}</LinkRouter>
+          )
       })}
     </MuiBreadcrumbs>
   )

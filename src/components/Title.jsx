@@ -1,14 +1,12 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import './components.css'
 
 const Title = (props) => {
   const { label } = props
   return (
-    <div className='header'>
-      <div className='container'>
-        <div className='title'>{label}</div>
-      </div>
-    </div>
+    <hgroup className="header">
+      <header className='title'>{label}</header>
+    </hgroup>
   )
 }
 

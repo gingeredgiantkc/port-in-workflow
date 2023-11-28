@@ -8,64 +8,63 @@ export default function ProviderInfo() {
   
   return (
     <Fragment>
-      <Title label="Provider Info" />
-      <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
-        <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-          <p className='my-2 ml-2 mr-8'>
-            An account number and PIN/password are required for porting telephone numbers.
-          </p>
-          <p className='my-2 ml-2 mr-8'>
-            Confirm that the customer has the account number and PIN/password from the current provider.
-          </p>
-          <p className='my-2 ml-2 mr-8 italic'>
-            Is the customer able to provide you with this information?
-          </p>
-          <FormControl
-            sx={{
-              '& .MuiFormControlLabel-label': {
-                fontSize: '0.9rem',
-                fontWeight: 'medium',
-                flexGrow: 1,
-                textAlign: 'justify',
-              },
-              marginLeft: 2,
-            }}
-          >
-            <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
-              <FormControlLabel
-                control={
-                  <Radio
-                    size='small'
-                    sx={{
-                      color: '#ffffff',
-                      '&.Mui-checked': {
-                        color: '#ffffff',
-                      },
-                    }}
-                  />
-                }
-                label='Yes'
-                value='/precheck-confirm'
-              />
-              <FormControlLabel
-                control={
-                  <Radio
-                    size='small'
-                    sx={{
-                      color: '#ffffff',
-                      '&.Mui-checked': {
-                        color: '#ffffff',
-                      },
-                    }}
-                  />
-                }
-                label='No'
-                value='/ending-no-info'
-              />
-            </RadioGroup>
-          </FormControl>
-        </div>
+      <div className="body-text">
+        <p className="paragraph">
+          An account number and PIN/password are required for porting telephone numbers.
+        </p>
+        <p className="paragraph">
+          Confirm that the customer has the account number and PIN/password from the current provider.
+        </p>
+        <p className="question">
+          Is the customer able to provide you with this information?
+        </p>
+        <FormControl
+          sx={{
+            '& .MuiFormControlLabel-label': {
+              fontFamily: 'PP Object Sans Regular',
+              fontSize: '16px',
+              fontWeight: 'medium',
+              flexGrow: 1,
+              textAlign: 'justify',
+            },
+            marginLeft: 2,
+          }}
+        >
+          <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
+            <FormControlLabel
+              control={
+                <Radio
+                  size='small'
+                  sx={{
+                    color: '#05122d',
+                    '&.Mui-checked': {
+                      color: '#05122d',
+                    },
+                  }}
+                />
+              }
+              label='Yes'
+              value='/precheck-confirm'
+            />
+            <FormControlLabel
+              control={
+                <Radio
+                  size='small'
+                  sx={{
+                    color: '#05122d',
+                    '&.Mui-checked': {
+                      color: '#05122d',
+                    },
+                  }}
+                />
+              }
+              label='No'
+              value='/ending-no-info'
+            />
+          </RadioGroup>
+        </FormControl>
       </div>
+      <Title label="Provider Info" />
     </Fragment>
   )
 }

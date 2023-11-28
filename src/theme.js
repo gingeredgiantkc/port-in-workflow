@@ -6,7 +6,7 @@ export const theme =  createTheme({
       main: '#ff0037',
     },
     secondary: {
-      main: '#141928',
+      main: '#05122d',
     },
     background: {
       default: '#ffffff',
@@ -22,10 +22,7 @@ export const theme =  createTheme({
     },
   },
   typography: {
-    fontFamily: '"object-sans", "Helvetica", "Arial", sans-serif',
-    h1: {
-      fontFamily: '"bandwidth", "Helvetica", "Arial", sans-serif',
-    },
+    fontFamily: '"PP Object Sans Regular", "Helvetica", "Arial", sans-serif',
   },
   shape: {
     borderRadius: 8,
