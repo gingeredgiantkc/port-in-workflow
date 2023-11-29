@@ -8,6 +8,7 @@ export default function ProviderInfo() {
   
   return (
     <Fragment>
+      <Title label="Provider Info" />
       <div className="body-text">
         <p className="paragraph">
           An account number and PIN/password are required for porting telephone numbers.
@@ -64,7 +65,6 @@ export default function ProviderInfo() {
           </RadioGroup>
         </FormControl>
       </div>
-      <Title label="Provider Info" />
     </Fragment>
   )
 }

@@ -1,0 +1,20 @@
+
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  color: #05122d;
+  font-family: 'PP Object Sans';
+  font-size: 1rem;
+  margin: 1rem;   
+  grid-area: 2 / 1 / 5 / 13;
+}
+
+.section {
+  margin: 0.5rem;
+  padding: 0;
+  &.question {
+    font-weight: bold;
+    font-style: italic;
+  }
+}

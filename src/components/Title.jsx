@@ -1,13 +1,10 @@
-import React, { Fragment } from 'react'
-import './components.css'
+import React from 'react'
+import styles from './Title.module.scss'
 
-const Title = (props) => {
-  const { label } = props
+export default function Title({ label }) {
   return (
-    <hgroup className="header">
-      <header className='title'>{label}</header>
+    <hgroup className={styles.header}>
+      <header className={styles.title}>{label}</header>
     </hgroup>
   )
 }
-
-export default Title

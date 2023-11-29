@@ -5,7 +5,7 @@ import { theme } from '../theme'
 import useProcessFlowContext from '../hooks/useProcessFlowContext'
 import { Appointment, Billing, Credit, End, Order, Prospect, Provider, Review, Start } from '../pages/process'
 
-export default function ProcessLayout() {
+export  function Process() {
   const { stepNumber, taskState } = useProcessFlowContext()
   const { task1, task2, task3, task4, task5 } = taskState
 

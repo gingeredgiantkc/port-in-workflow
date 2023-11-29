@@ -25,14 +25,14 @@ function Breadcrumbs() {
           <Typography sx={{
               paddingTop: '2px',
               paddingLeft: '2px',
-              fontFamily: 'PP Object Sans Regular',
+              fontFamily: 'PP Object Sans',
               fontSize: '1rem'
             }} color="#05122d" key={index}>{pages[routeTo]}</Typography>
         ) : (
           <LinkRouter sx={{
               paddingTop: '2px',
               paddingLeft: '2px',
-              fontFamily: 'PP Object Sans Regular',
+              fontFamily: 'PP Object Sans',
               fontSize: '1rem'
             }} color="#262626" key={index} to={routeTo}>{pages[routeTo]}</LinkRouter>
           )

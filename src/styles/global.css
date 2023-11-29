@@ -1,17 +1,21 @@
 @font-face {
-  font-family: "Bandwidth Display RG";
-  src: url("/fonts/BandwidthDisplay_Rg.woff2");
+  font-family: 'Bandwidth Display';
+  src: url("/src/assets/fonts/BandwidthDisplay_Rg.woff2");
 }
 
 @font-face {
-  font-family: "PP Object Sans Regular";
-  src: url("/fonts/PPObjectSans-Regular.woff2");
+  font-family: 'PP Object Sans';
+  src: url("/src/assets/fonts/PPObjectSans-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
-@font-face {
-  font-family: "PP Object Sans Bold";
-  src: url("/fonts/PPObjectSans-Bold.woff2");
-}
+/* @font-face {
+  font-family: 'PP Object Sans';
+  src: url("/src/assets/fonts/PPObjectSans-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+} */
 
 @tailwind base;
 @tailwind components;
@@ -24,15 +28,10 @@
 }
 
 body {
-  font: 1.5rem 'PP Object Sans Regular';
+  font-family: 'PP Object Sans', sans-serif;
+  color: #05122d;
   min-height: 100vh;
   background-color: #05122d;
-  /*
-  background-image: url("/assets/background.png");
-  background-color: #05122d;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  */
 }
 
 /* main {
@@ -60,7 +59,7 @@ body {
 }
 
 .title {
-  font-family: "Bandwidth Display RG";
+  font-family: 'Bandwidth Display';
   color: #ffffff;
   font-size: 1.25rem;
   line-height: 1.5rem;
@@ -118,7 +117,7 @@ body {
   }
   
   .title {
-    font-family: "Bandwidth Display RG";
+    font-family: 'Bandwidth Display';
     color: #ffffff;
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -146,28 +145,7 @@ body {
   main {
     width: 100vw;
     height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(2, 2.25fr) repeat(2, 1fr 0.5fr) 1fr repeat(2, 2.25fr);
     margin: 0 auto;
-  }
-
-  #band-1 {
-    display: inline;
-    grid-area: 3 / 1 / 4 / 13;
-    background-color: #96fff5;
-  }
-  
-  #band-2 {
-    display: inline;
-    grid-area: 5 / 1 / 6 / 13;
-    background-color: #96fff5;
-  }
-  
-  #band-3 {
-    display: inline;
-    grid-area: 7 / 1 / 8 / 13;
-    background-color: #96fff5;
   }
 
   #logo {
@@ -205,60 +183,14 @@ body {
     padding-left: 1rem;
   }
 
-  .header {
-    grid-area: 1 / 1 / 2 / 13;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    background-color: #ff0037;
-    margin-left: 2px;
-    margin-right: 2px;
-    border: ridge 8px #ce0530;
-    box-shadow: 0px 6px 11px -2px #575050;
-  }
 
-  .title {
-    font-family: "Bandwidth Display RG";
-    color: #ffffff;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
-  }
-
-  .card {
-    grid-area: 2 / 2 / 5 / 12;
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
-    color: #05122d;
-    font-family: 'PP Object Sans Regular';
-    font-size: 1rem;
-    padding: 1rem;
-  }
-
-  .card section {
-    padding-bottom: 1rem;
-  }
-
-  .section-break {
-    margin: 0.5rem 0;
-  }
-
-  p.section-break.question {
-    font-weight: bold;
-    font-style: italic;
-  }
-
-  .question {
-    font-weight: bold;
-    font-style: italic;
-  }
 
   a.article {
     color: #ff0037;
     font-size: large;
     font-weight: 700;
-    &:hover {
-    color: #8f001f;
-    }
   }
-/* } */
+  
+  a.article:hover {
+    color: #8f001f;
+  }

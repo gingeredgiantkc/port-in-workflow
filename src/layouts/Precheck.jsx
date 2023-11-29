@@ -2,11 +2,12 @@ import { Fragment, useEffect, useRef } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import useAppStateContext from '../hooks/useAppStateContext'
 import Modal from '../components/Modal'
-import Button from '../components/buttons/Next'
+import Button from '../components/buttons/Button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight, faArrowRotateLeft } from '@fortawesome/free-solid-svg-icons'
+import styles from './Precheck.module.scss'
 
-function RootLayout() {
+export function Precheck() {
   const { setPath, path, value, handleOpen } = useAppStateContext()
   const isFirstRender = useRef(true)
   let navigate = useNavigate()
@@ -28,20 +29,20 @@ function RootLayout() {
 
   return (
     <Fragment>
-      <main id="main" className="grid-container-1">
-        <div id="band-1"></div>
-        <div id="band-2"></div>
-        <div id="band-3"></div>
-        <img id="logo" src='./src/assets/frontier.svg' className="grid-item-1"/>
-        <div id="window" className="grid-item-2 grid-container-2">
-          <div id="nav-btns" className="grid-item-1">
-            <Button onClick={() => handleOpen()}>
+      <main id='canvas' className={styles.gridContainerI}>
+        <div id='first' className={styles.band}></div>
+        <div id='second' className={styles.band}></div>
+        <div id='third' className={styles.band}></div>
+        <img id="logo" src='./src/assets/frontier.svg' className={styles.logo} />
+        <div id="window" className={styles.gridContainerII}>
+          <div id="nav-btns" className={styles.gridItemI}>
+            <Button type="reset" onClick={() => handleOpen()}>
               <FontAwesomeIcon icon={faArrowRotateLeft} inverse fixedWidth />
             </Button>
-            <Button onClick={() => navigate(-1)}>
+            <Button type="navigation" onClick={() => navigate(-1)}>
               <FontAwesomeIcon icon={faArrowLeft} inverse fixedWidth />
             </Button>
-            <Button onClick={() => navigate(path)}>
+            <Button type="navigation" onClick={() => navigate(path)}>
               <FontAwesomeIcon icon={faArrowRight} inverse fixedWidth />
             </Button>
           </div>
@@ -52,5 +53,3 @@ function RootLayout() {
     </Fragment>
   )
 }
-
-export default RootLayout

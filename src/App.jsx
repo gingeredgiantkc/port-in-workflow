@@ -6,23 +6,27 @@ import {
   RouterProvider,
   } from 'react-router-dom'
 
-// layouts
-import RootLayout from './layouts/RootLayout'
-import ProcessLayout from './layouts/ProcessLayout'
+/*** Layouts ***/
+import { Precheck as PrecheckLayout } from './layouts/Precheck'
+import { Process as ProcessLayout } from './layouts/Process'
 import LastPage from './layouts/LastPage'
 
-// pre-check pages
-import { ActiveNumber, CheckPortability, ExistingService, Home, PrecheckConfirm, ProviderInfo } from './pages/precheck'
-// end pages
+/*** Pages ***/
+// precheck
+import { ActiveNumber, CheckPortability, CurrentServices, Home, PrecheckConfirm, ProviderInfo } from './pages/precheck'
+// end
 import { EndingInactive, EndingNoInfo, EndingNotPortable, EndingTransferToSales } from './pages/end'
 
-// routes
+/*** Stylings ***/
+import './styles/components.css'
+
+/*** Routes ***/
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Fragment>
-      <Route path='/' element={<RootLayout />}>
+      <Route path='/' element={<PrecheckLayout />}>
         <Route index element={<Home />} />    
-        <Route path='existing-service' element={<ExistingService />} /> 
+        <Route path='existing-service' element={<CurrentServices />} /> 
         <Route path='existing-service/check-portability' element={<CheckPortability />} />
         <Route path='existing-service/check-portability/active-number' element={<ActiveNumber />} />
         <Route path='existing-service/check-portability/active-number/provider-info' element={<ProviderInfo />} />

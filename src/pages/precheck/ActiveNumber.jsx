@@ -2,20 +2,24 @@ import React, { Fragment } from 'react'
 import useAppStateContext from '../../hooks/useAppStateContext'
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import Title from '../../components/Title';
+import styles from '../precheck.module.scss'
 
 export default function ActiveNumber() {
   const { value, setValue } = useAppStateContext()
   
   return (
     <Fragment>
-      <div className='body-text lg-list'>
-        <p className='paragraph'>
+      <Title label="Active Telephone Number" />
+      <div className={styles.card}>
+        <span className={styles.section}>
           In order to be eligible for porting, a telephone number must be associated with a currently active line of voice service.
-          <br />  
+        </span>
+        <span className={styles.section}>  
           Lines that have already been cancelled or are pending cancellation cannot be ported in or out of a network.
-          <br />
+        </span>
+        <span className={`${styles.question} ${styles.section}`}>
           Does the customer confirm that the requested number is associated with an active line of service from his/her current provider?
-        </p>
+        </span>
         <FormControl
           sx={{
             '& .MuiFormControlLabel-label': {
@@ -62,7 +66,6 @@ export default function ActiveNumber() {
           </RadioGroup>
         </FormControl>
       </div>
-      <Title label="Active Telephone Number" />
     </Fragment>
   )
 }

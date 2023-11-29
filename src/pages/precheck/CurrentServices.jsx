@@ -2,41 +2,48 @@ import React, { Fragment } from 'react'
 import { FormControlLabel, FormControl, Radio, RadioGroup } from '@mui/material'
 import useAppStateContext from '../../hooks/useAppStateContext'
 import Title from '../../components/Title'
+import styles from '../precheck.module.scss'
 
-export default function ExistingService() {
+export default function CurrentServices() {
   const { value, setValue } = useAppStateContext()
   
   return (
     <Fragment>
       <Title label="Current Services" />
-      <div className="card">
-        <section className="intro">
+      <div className={styles.card}>
+        <span className={styles.section}>
           Residential CARE Account Services specialists only process a port-in/winback when:
-        </section>
-        <section className="info">
+        </span>
+        <span className={styles.section}>
           1. The customer is wanting to establish a new voice-only account, {' '}
           <span className='font-bold underline'>OR{' '}</span>
           <br />
           2. The customer already has an active account or pending service order to establish service(s).
-        </section>
-        <section className="outro">
-          Use The HUB, DPI, and other tools to search for any currently active accounts and/or pending orders.
-        </section>
-        <section className="question">
+        </span>
+        <span className={styles.section}>
+          Use The HUB, DPI, and other tools to search for any currently active accounts and/or pending install orders tied to the caller's service address.
+        </span>
+        <span className={`${styles.section} ${styles.question}`}>
           Does the customer have an active account or pending install order, and does the customer wish to open a new voice-only account?
-        </section>
+        </span>
         <FormControl
           sx={{
-            '& .MuiFormControlLabel-label': {
-              fontFamily: 'PP Object Sans Regular',
-              fontSize: '1rem',
+            '& .MuiFormControl-root': {
+              fontFamily: 'PP Object Sans',
               fontWeight: 'medium',
-              paddingTop: 0,
-              marginY: '0.25rem',
+              paddingY: 0,
+              marginY: 0,
               textAlign: 'justify',
             },
-            marginLeft: 2,
-            marginRight: 8,
+            '& .MuiFormControlLabel-label': {
+              fontSize: '1rem',
+              fontFamily: 'PP Object Sans',
+              marginY: 0.5,
+              marginLeft: 0.5,
+            },
+            marginX: 1,
+            marginY: 0,
+            flexDirection: 'row'
           }}
         >
           <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
@@ -56,7 +63,6 @@ export default function ExistingService() {
               value='/active-number'
             />
             <FormControlLabel
-              sx={{ fontSize: '12px' }}
               control={
                 <Radio
                   size='small' 
