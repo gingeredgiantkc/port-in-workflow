@@ -36,19 +36,28 @@
   &.navigation {
     background: linear-gradient(
       to left,
-      hsl(221 80% 16%) 0%,
-      hsl(221 80% 32%) 8%,
-      hsl(221 80% 32%) 92%,
-      hsl(221 80% 16%) 100%
+      hsl(221, 80%, 16%) 0%,
+      hsl(221, 80%, 32%) 8%,
+      hsl(221, 80%, 32%) 92%,
+      hsl(221, 80%, 16%) 100%
     );
   }
   &.reset {
     background: linear-gradient(
       to left,
-      hsl(340 100% 16%) 0%,
-      hsl(340 100% 32%) 8%,
-      hsl(340 100% 32%) 92%,
-      hsl(340 100% 16%) 100%
+      hsl(340, 100%, 16%) 0%,
+      hsl(340, 100%, 32%) 8%,
+      hsl(340, 100%, 32%) 92%,
+      hsl(340, 100%, 16%) 100%
+    );
+  }
+  &.home {
+    background: linear-gradient(
+      to left,
+      hsl(150, 50%, 16%) 0%,
+      hsl(150, 50%, 32%) 8%,
+      hsl(150, 50%, 32%) 92%,
+      hsl(150, 50%, 16%) 100%
     );
   }
 }
@@ -71,6 +80,9 @@
   }
   &.reset {
     background: hsl(345, 100%, 47%);
+  }
+  &.home {
+    background: hsl(156, 100%, 35%);
   }
 }
 
