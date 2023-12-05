@@ -2,11 +2,12 @@ import React, { Fragment } from 'react'
 import useAppStateContext from '../../hooks/useAppStateContext'
 import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import Title from '../../components/Title';
-import styles from '../precheck.module.scss'
+import styles from '../pages.module.scss'
 
 export default function ActiveNumber() {
-  const { value, setValue } = useAppStateContext()
-  
+  const { path } = useAppStateContext()
+  const onChange = event => (path.value = event.target.value)
+
   return (
     <Fragment>
       <Title label="Active Telephone Number" />
@@ -32,7 +33,7 @@ export default function ActiveNumber() {
             marginLeft: 2,
           }}
         >
-          <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
+          <RadioGroup value={path.value} onChange={onChange}>
             <FormControlLabel
               control={
                 <Radio

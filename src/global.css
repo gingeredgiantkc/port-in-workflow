@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Bandwidth Display';
+  src: url("/src/assets/fonts/BandwidthDisplay_Rg.woff2");
+}
+
+@font-face {
+  font-family: 'PP Object Sans';
+  src: url("/src/assets/fonts/PPObjectSans-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'PP Object Sans', sans-serif;
+  color: #05122d;
+  min-height: 100vh;
+  background-color: #05122d;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+ 

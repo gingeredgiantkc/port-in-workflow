@@ -3,7 +3,7 @@ import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
 import Title from '../../components/Title'
-import styles from '../precheck.module.scss'
+import styles from '../pages.module.scss'
 
 export default function Home() {
   return (

@@ -1,7 +1,6 @@
 import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { Breadcrumbs as MuiBreadcrumbs, Link, Typography } from '@mui/material'
 import useAppStateContext from '../hooks/useAppStateContext'
-import './components.css'
 
 function LinkRouter(props) {
   return <Link {...props} className="hover:cursor-pointer hover:font-bold no-underline" component={RouterLink} />

@@ -2,72 +2,84 @@ import React, { Fragment } from 'react'
 import { FormControlLabel, FormControl, Radio, RadioGroup } from '@mui/material'
 import useAppStateContext from '../../hooks/useAppStateContext'
 import Title from '../../components/Title'
+import styles from '../pages.module.scss'
 
 export default function CheckPortability() {
-  const { value, setValue } = useAppStateContext()
-  
+  const { path } = useAppStateContext()
+  const onChange = event => (path.value = event.target.value)
   return (
     <Fragment>
       <Title label="Check Portability" />
-      <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
-        <div className='flex flex-col flex-wrap text-white font-medium ml-4 mt-4'>
-          <p className='my-2 ml-2 mr-8'>
-          TIP: Make note of the services the customer currently has with Frontier and their plans/tiers so that you have them later when writing the order.<br /><br />
-          Take a moment to check if the telephone number can be ported into the customer's exchange.<br /><br />
-          Open {"   "}
-              <a className='inline-flex' href='https://cfapps.ftr.com/cert/main.cfm' target='_blank' rel='noopener noreferrer'>                   
-                CERT
-              </a>
-          {"   "} and click Options {'>'} NPA/NXX Lookup, and use the tool at the bottom of the screen to determine if the telephone number can be ported-in.
-          </p>
-          <p className='my-2 ml-2 mr-8 italic'>
-            Can the phone number be ported from the customer's current provider to Frontier?
-          </p>
-          <FormControl
-            sx={{
-              '& .MuiFormControlLabel-label': {
-                fontSize: '0.9rem',
-                fontWeight: 'medium',
-                flexGrow: 1,
-                textAlign: 'justify',
-              },
-              marginLeft: 2
-            }}
-          >
-            <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
-              <FormControlLabel
-                control={
-                  <Radio
-                    size='small'
-                    sx={{
-                      color: '#ffffff',
-                      '&.Mui-checked': {
-                        color: '#ffffff',
-                      },
-                    }}
-                  />
-                }
-                label='Yes'
-                value='/active-number'
-              />
-              <FormControlLabel
-                control={
-                  <Radio
-                    size='small'
-                    sx={{
-                      color: '#ffffff',
-                      '&.Mui-checked': {
-                        color: '#ffffff',
-                      },
-                    }}
-                  />
-                }
-                label='No'
-                value='/ending-not-portable'
-              />
-            </RadioGroup>
-          </FormControl>
-        </div>
+      <div className={styles.card}>
+        <span className={styles.section}>
+          TIP: Make note of the services the customer currently has with Frontier and their plans/tiers so that you have them later when writing the order.
+        </span>
+        <span className={styles.section}>
+          Next, use {"   "}
+            <a className={styles.hyperlink} href='https://cfapps.ftr.com/cert/main.cfm' target='_blank' rel='noopener noreferrer'>                   
+              CERT
+            </a>
+          {"   "} to check if the desired telephone number can be ported into the exchange where the subscriber resides by using 
+        </span>
+        <span className={styles.section}>
+          Grab the first six (6) digits of the Billing Telephone Number or an eligible NPA/NXX from <span className="bold">Exchange Information</span> in CERT. Then, click Options {'>'} NPA/NXX Lookup, and use the tool at the bottom of the screen to determine if the telephone number is portable.
+        </span>
+        <span className={`${styles.question} ${styles.section}`}>
+          Can the phone number be ported from the customer's current provider to Frontier?
+        </span>
+        <FormControl
+          sx={{
+            '& .MuiFormControl-root': {
+              fontFamily: 'PP Object Sans',
+              fontWeight: 'medium',
+              paddingY: 0,
+              marginY: 0,
+              textAlign: 'justify',
+            },
+            '& .MuiFormControlLabel-label': {
+              fontSize: '1rem',
+              fontFamily: 'PP Object Sans',
+              marginY: 0.5,
+              marginLeft: 0.5,
+            },
+            marginX: 1,
+            marginY: 0,
+            flexDirection: 'row'
+          }}
+        >
+          <RadioGroup value={path.value} onChange={onChange}>
+            <FormControlLabel
+              control={
+                <Radio
+                  size='small'
+                  sx={{
+                    color: '#05122d',
+                    '&.Mui-checked': {
+                      color: '#05122d',
+                    },
+                  }}
+                />
+              }
+              label='Yes'
+              value='/active-number'
+            />
+            <FormControlLabel
+              control={
+                <Radio
+                  size='small'
+                  sx={{
+                    color: '#05122d',
+                    '&.Mui-checked': {
+                      color: '#05122d',
+                    },
+                  }}
+                />
+              }
+              label='No'
+              value='/ending-not-portable'
+            />
+          </RadioGroup>
+        </FormControl>
       </div>
     </Fragment>
   )

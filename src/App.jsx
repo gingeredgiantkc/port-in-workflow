@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react'
+import './styles.css'
+
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -16,9 +18,6 @@ import LastPage from './layouts/LastPage'
 import { ActiveNumber, CheckPortability, CurrentServices, Home, PrecheckConfirm, ProviderInfo } from './pages/precheck'
 // end
 import { EndingInactive, EndingNoInfo, EndingNotPortable, EndingTransferToSales } from './pages/end'
-
-/*** Stylings ***/
-import './styles/components.css'
 
 /*** Routes ***/
 const router = createBrowserRouter(

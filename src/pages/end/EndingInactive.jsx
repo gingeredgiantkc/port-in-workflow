@@ -5,6 +5,7 @@ import Title from '../../components/Title'
 import { Checkbox, FormControl, FormControlLabel, FormGroup, FormLabel } from '@mui/material'
 import useAppStateContext from '../../hooks/useAppStateContext'
 import { useLocation } from 'react-router-dom'
+import styles from '../pages.module.scss'
 
 export default function EndingInactive() {
   const { state, setState, setPath } = useAppStateContext()
@@ -35,102 +36,104 @@ export default function EndingInactive() {
   return (
     <Fragment>
       <Title label="Ending: Inactive Number" />
-      <div className='row-start-2 col-start-3 col-end-13 row-span-4'>
-        <div className='flex flex-col flex-wrap text-white font-medium ml-6 mt-4'>
-          <p className='my-2 mr-8'>The telephone number is not eligible to port-in.</p>
-          <FormControl sx={{ marginX: 3, marginBottom: 3 }} component="fieldset" variant="standard">
-            <FormLabel
-              sx={{
-                color: "#ffffff",
-                fontSize: "1rem",
-                textDecoration: "underline",
-              }}
-              component="legend"
-            >
-              Closing the Call:
-            </FormLabel>
-            <FormGroup>
-              <FormControlLabel
-                sx={{ marginTop: 1 }}
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
-                    checkedIcon={<CheckCircleIcon color="primary" />}
-                    checked={item1}
-                    onChange={handleChange}
-                    name="item1"
-                  />
-                }
-                label="Explain to the customer that only numbers assigned to active voice lines can be ported-in."
-              />
-              <FormControlLabel
-                sx={{ marginTop: 1 }}
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
-                    checkedIcon={<CheckCircleIcon color="primary" />}
-                    checked={item2}
-                    onChange={handleChange}
-                    name="item2"
-                  />
-                }
-                label="Recap the details of the call with the customer."
-              />
-              <FormControlLabel
-                sx={{ marginTop: 1 }}
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
-                    checkedIcon={<CheckCircleIcon color="primary" />}
-                    checked={item3}
-                    onChange={handleChange}
-                    name="item3"
-                  />
-                }
-                label='Give closing statements (i.e., "My goal is to ensure your satisfaction. Have I resolved the reasons for your call today?").'
-              />
-              <FormControlLabel
-                sx={{ marginTop: 1 }}
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
-                    checkedIcon={<CheckCircleIcon color="primary" />}
-                    checked={item4}
-                    onChange={handleChange}
-                    name="item4"
-                  />
-                }
-                label="Complete the contact by selecting the appropriate call disposition."
-              />
-              <FormControlLabel
-                sx={{ marginTop: 1 }}
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
-                    checkedIcon={<CheckCircleIcon color="primary" />}
-                    checked={item5}
-                    onChange={handleChange}
-                    name="item5"
-                  />
-                }
-                label="Finishing entering your notes of the interaction in The HUB."
-              />
-              <FormControlLabel
-                sx={{ marginTop: 1 }}
-                control={
-                  <Checkbox
-                    icon={<CircleOutlinedIcon sx={{ color: "#ffffff" }} />}
-                    checkedIcon={<CheckCircleIcon color="primary" />}
-                    checked={item6}
-                    onChange={handleChange}
-                    name="item6"
-                  />
-                }
-                label='Rebrand the company, and close the call (i.e., "Thank you for calling Frontier. Have a wonderful day! Goodbye!").'
-              />
-            </FormGroup>
-          </FormControl>
-        </div>
+      <div className={styles.card}>
+        <span className={`${styles.question} ${styles.section}`}>
+          The telephone number is not eligible to port-in.
+        </span>
+        <FormControl sx={{ marginX: 3, marginBottom: 3 }} component="fieldset" variant="standard">
+          <FormLabel
+            sx={{
+              color: "#05122d",
+              fontSize: "1.1rem",
+              fontFamily: "PP Object Sans",
+              fontWeight: 700,
+              textDecoration: "underline",
+            }}
+            component="legend"
+          >
+            Closing the Call:
+          </FormLabel>
+          <FormGroup>
+            <FormControlLabel
+              sx={{ marginTop: 0.5 }}
+              control={
+                <Checkbox
+                  icon={<CircleOutlinedIcon sx={{ color: "#05122d" }} />}
+                  checkedIcon={<CheckCircleIcon sx={{ color: "#05122d" }} />}
+                  checked={item1}
+                  onChange={handleChange}
+                  name="item1"
+                />
+              }
+              label="Explain to the customer that only numbers assigned to active voice lines can be ported-in."
+            />
+            <FormControlLabel
+              sx={{ marginTop: 0.5 }}
+              control={
+                <Checkbox
+                  icon={<CircleOutlinedIcon sx={{ color: "#05122d" }} />}
+                  checkedIcon={<CheckCircleIcon sx={{ color: "#05122d" }} />}
+                  checked={item2}
+                  onChange={handleChange}
+                  name="item2"
+                />
+              }
+              label="Recap the details of the call with the customer."
+            />
+            <FormControlLabel
+              sx={{ marginTop: 0.5 }}
+              control={
+                <Checkbox
+                  icon={<CircleOutlinedIcon sx={{ color: "#05122d" }} />}
+                  checkedIcon={<CheckCircleIcon sx={{ color: "#05122d" }} />}
+                  checked={item3}
+                  onChange={handleChange}
+                  name="item3"
+                />
+              }
+              label='Give closing statements (i.e., "My goal is to ensure your satisfaction. Have I resolved the reasons for your call today?").'
+            />
+            <FormControlLabel
+              sx={{ marginTop: 0.5 }}
+              control={
+                <Checkbox
+                  icon={<CircleOutlinedIcon sx={{ color: "#05122d" }} />}
+                  checkedIcon={<CheckCircleIcon sx={{ color: "#05122d" }} />}
+                  checked={item4}
+                  onChange={handleChange}
+                  name="item4"
+                />
+              }
+              label="Complete the contact by selecting the appropriate call disposition."
+            />
+            <FormControlLabel
+              sx={{ marginTop: 0.5 }}
+              control={
+                <Checkbox
+                  icon={<CircleOutlinedIcon sx={{ color: "#05122d" }} />}
+                  checkedIcon={<CheckCircleIcon sx={{ color: "#05122d" }} />}
+                  checked={item5}
+                  onChange={handleChange}
+                  name="item5"
+                />
+              }
+              label="Finishing entering your notes of the interaction in The HUB."
+            />
+            <FormControlLabel
+              sx={{ marginTop: 0.5 }}
+              control={
+                <Checkbox
+                  icon={<CircleOutlinedIcon sx={{ color: "#05122d" }} />}
+                  checkedIcon={<CheckCircleIcon sx={{ color: "#05122d" }} />}
+                  checked={item6}
+                  onChange={handleChange}
+                  name="item6"
+                />
+              }
+              label='Rebrand the company, and close the call (i.e., "Thank you for calling Frontier. Have a wonderful day! Goodbye!").'
+            />
+          </FormGroup>
+        </FormControl>
       </div>
     </Fragment>
   )

@@ -6,7 +6,7 @@ import { ProcessFlowProvider } from './contexts/ProcessFlowContext'
 // import { ThemeProvider } from '@mui/material'
 // import { theme } from './theme'
 // import './fontawesome'
-// import './styles/global.css'
+// import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <ThemeProvider theme={theme}>

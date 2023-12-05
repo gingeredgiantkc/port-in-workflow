@@ -1,3 +1,4 @@
+import { signal } from '@preact/signals-react'
 import React, { createContext, useState } from 'react'
 
 const AppStateContext = createContext({})
@@ -22,14 +23,10 @@ export const AppStateProvider = ({ children }) => {
     '/existing-service/ending-transfer': 'End',
   }
 
-  const defaultValue = 'existing-service'
-  const defaultOpen = false
-  const defaultPath = ''
+  const path = signal('')
+  const [open, setOpen] = useState(false)
 
-  const [value, setValue] = useState(defaultValue)
-  const [open, setOpen] = useState(defaultOpen)
   const [firstPage, setFirstPage] = useState(true)
-  const [path, setPath] = useState(defaultPath)
   const [state, setState] = useState({
     item1: false,
     item2: false,
@@ -39,34 +36,29 @@ export const AppStateProvider = ({ children }) => {
     item6: false,
   });
 
+
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-  const handleReset = () => {
-    setState(false);
-    setValue(defaultValue);
-    setPath('/existing-service');
-    setOpen(defaultOpen);
-    setFirstPage(true);
-  }
+//  const handleReset = () => {
+//    setValue(undefined);
+ //   setPath('/existing-service');
+//    setOpen(false);
+//    setFirstPage(true);
+//  }
   
   return (
     <AppStateContext.Provider
       value={{
         pages,
-        defaultValue,
-        defaultOpen,
         open,
-        path,
-        setPath,
         handleOpen,
         handleClose,
-        handleReset,
-        value,
-        setValue,
+/*    handleReset,*/
+        path,
         firstPage,
         setFirstPage,
         state,
-        setState,
+        setState
       }}
     >
       {children}

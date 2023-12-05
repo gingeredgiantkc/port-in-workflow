@@ -1,12 +1,13 @@
 import React, { Fragment } from 'react'
 import { FormControlLabel, FormControl, Radio, RadioGroup } from '@mui/material'
-import useAppStateContext from '../../hooks/useAppStateContext'
 import Title from '../../components/Title'
-import styles from '../precheck.module.scss'
+import styles from '../pages.module.scss'
+import useAppStateContext from '../../hooks/useAppStateContext'
 
 export default function CurrentServices() {
-  const { value, setValue } = useAppStateContext()
-  
+  const { path } = useAppStateContext()
+  const onChange = event => (path.value = event.target.value)
+
   return (
     <Fragment>
       <Title label="Current Services" />
@@ -46,7 +47,7 @@ export default function CurrentServices() {
             flexDirection: 'row'
           }}
         >
-          <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
+          <RadioGroup value={path.value} onChange={onChange}>
             <FormControlLabel
               control={
                 <Radio

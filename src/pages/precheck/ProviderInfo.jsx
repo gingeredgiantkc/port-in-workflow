@@ -1,24 +1,26 @@
 import React, { Fragment } from 'react'
 import useAppStateContext from '../../hooks/useAppStateContext'
-import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
-import Title from '../../components/Title';
+import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material'
+import Title from '../../components/Title'
+import styles from '../pages.module.scss'
 
 export default function ProviderInfo() {
-  const { value, setValue } = useAppStateContext()
+  const { path } = useAppStateContext()
+  const onChange = event => (path.value = event.target.value)
   
   return (
     <Fragment>
       <Title label="Provider Info" />
-      <div className="body-text">
-        <p className="paragraph">
+      <div className={styles.card}>
+        <span className={styles.section}>
           An account number and PIN/password are required for porting telephone numbers.
-        </p>
-        <p className="paragraph">
+        </span>
+        <span className={styles.section}>
           Confirm that the customer has the account number and PIN/password from the current provider.
-        </p>
-        <p className="question">
+        </span>
+        <span className={`${styles.section} ${styles.question}`}>
           Is the customer able to provide you with this information?
-        </p>
+        </span>
         <FormControl
           sx={{
             '& .MuiFormControlLabel-label': {
@@ -31,7 +33,7 @@ export default function ProviderInfo() {
             marginLeft: 2,
           }}
         >
-          <RadioGroup value={value} onChange={(e) => setValue(e.target.value)}>
+          <RadioGroup value={path.value} onChange={onChange}>
             <FormControlLabel
               control={
                 <Radio
