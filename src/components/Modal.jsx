@@ -20,7 +20,7 @@ const style = {
 };
 
 export default function Modal() {
-  const { open, handleClose, handleReset } = useAppStateContext()
+  const { open, setOpen } = useAppStateContext()
   const navigate = useNavigate()
   const handleConfirm = () => {
     handleReset();
@@ -45,7 +45,7 @@ export default function Modal() {
             <div className='font-object-sans'>
                Are you sure you want to start over?
             </div>
-            <Button onClick={handleClose} variant='contained' color='secondary'>
+            <Button onClick={handleClose} variant='contained' color='#141429'>
               Cancel
             </Button>
             <span className='tab' />
