@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": "build",
+    "site": "piet-ftr",
     "ignore": [
       "firebase.json",
       "**/.*",
