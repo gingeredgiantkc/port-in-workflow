@@ -47,7 +47,7 @@ export function Precheck() {
         <div id='first' className={styles.band}></div>
         <div id='second' className={styles.band}></div>
         <div id='third' className={styles.band}></div>
-        <img id="logo" src='./src/assets/frontier.svg' className={styles.logo} />
+        <img id="logo" src='/src/assets/frontier.svg' className={styles.logo} />
         <div id="window" className={styles.gridContainerII}>
           <div id="nav-btns" className={styles.gridItemI}>
             <Button type="reset" onClick={() => handleOpen()}>
