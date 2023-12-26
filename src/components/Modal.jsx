@@ -22,6 +22,7 @@ const style = {
 export default function Modal() {
   const { open, setOpen } = useAppStateContext()
   const navigate = useNavigate()
+  const handleClose = () => setOpen(false)
   const handleConfirm = () => {
     handleReset();
     navigate('/');
@@ -31,7 +32,7 @@ export default function Modal() {
     <div>
       <MuiModal
         open={open}
-        onClose={handleClose}
+        onClose={setOpen(false)}
         closeAfterTransition
         slots={{ backdrop: Backdrop }}
         slotProps={{
@@ -45,7 +46,7 @@ export default function Modal() {
             <div className='font-object-sans'>
                Are you sure you want to start over?
             </div>
-            <Button onClick={handleClose} variant='contained' color='#141429'>
+            <Button onClick={setOpen(false)} variant='contained' color='#141429'>
               Cancel
             </Button>
             <span className='tab' />

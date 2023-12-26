@@ -2,8 +2,8 @@ import React, { Fragment } from 'react'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled'
-import Title from '../../Components/Title'
-import Navigation from '../../Components/Navigation'
+import Title from '../../components/Title'
+import Navigation from '../../components/Navigation'
 
 function Start() {
   return (

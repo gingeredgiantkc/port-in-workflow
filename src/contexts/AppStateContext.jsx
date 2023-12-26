@@ -23,7 +23,7 @@ export const AppStateProvider = ({ children }) => {
     '/existing-service/ending-transfer': 'End',
   }
 
-  const path = signal('')
+  const [path, setPath] = useState(signal(''))
   const [open, setOpen] = useState(false)
 
   const [firstPage, setFirstPage] = useState(true)
@@ -39,12 +39,12 @@ export const AppStateProvider = ({ children }) => {
 
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
-//  const handleReset = () => {
-//    setValue(undefined);
- //   setPath('/existing-service');
-//    setOpen(false);
-//    setFirstPage(true);
-//  }
+  const handleReset = () => {
+    setValue(undefined);
+    setPath('/existing-service');
+    setOpen(false);
+    setFirstPage(true);
+  }
   
   return (
     <AppStateContext.Provider
@@ -53,12 +53,12 @@ export const AppStateProvider = ({ children }) => {
         open,
         handleOpen,
         handleClose,
-/*    handleReset,*/
+        handleReset,
         path,
         firstPage,
         setFirstPage,
-        state,
-        setState
+        // state,
+        // setState
       }}
     >
       {children}
