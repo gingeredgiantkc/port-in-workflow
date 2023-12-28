@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "dist",
-    "site": "piet-ftr",
     "ignore": [
       "firebase.json",
       "**/.*",
