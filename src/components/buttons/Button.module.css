@@ -1,0 +1,94 @@
+.pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 600ms;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsla(0, 0%, 0%, 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.edge.navigation {
+  background: linear-gradient(to left, hsl(221, 80%, 16%) 0%, hsl(221, 80%, 32%) 8%, hsl(221, 80%, 32%) 92%, hsl(221, 80%, 16%) 100%);
+}
+.edge.reset {
+  background: linear-gradient(to left, hsl(340, 100%, 16%) 0%, hsl(340, 100%, 32%) 8%, hsl(340, 100%, 32%) 92%, hsl(340, 100%, 16%) 100%);
+}
+.edge.home {
+  background: linear-gradient(to left, hsl(150, 50%, 16%) 0%, hsl(150, 50%, 32%) 8%, hsl(150, 50%, 32%) 92%, hsl(150, 50%, 16%) 100%);
+}
+
+.front {
+  display: block;
+  position: relative;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  color: white;
+  will-change: transform;
+  transform: translateY(-6px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+.front.navigation {
+  background: hsl(221, 80%, 10%);
+}
+.front.reset {
+  background: hsl(345, 100%, 47%);
+}
+.front.home {
+  background: hsl(156, 100%, 35%);
+}
+
+.pushable:hover {
+  transition: filter 250ms;
+  filter: brightness(110%);
+}
+
+.pushable:hover .front {
+  transform: translateY(-8px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(3px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}/*# sourceMappingURL=Button.module.css.map */

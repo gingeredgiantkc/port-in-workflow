@@ -1,0 +1,45 @@
+.logo {
+  display: flex;
+  flex-grow: 0;
+  margin: auto 25%;
+  padding-top: 5%;
+  padding-bottom: 0%;
+}
+
+.band {
+  display: inline;
+  background-color: #96fff5;
+}
+
+.gridContainerI {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 2.25fr) repeat(2, 1fr 0.5fr) 1fr repeat(2, 2.25fr);
+}
+
+.gridContainerII {
+  display: grid;
+  z-index: 1;
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 5px -4px #96fff5, 0px 0px 20px 0px #141928;
+  border-bottom: 12px outset #ddc9cd;
+  border-left: 12px outset #ddc9cd;
+  border-right: 12px outset #ddc9cd;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(5, 2fr);
+}
+
+.gridItemI {
+  display: flex;
+  z-index: 2;
+  justify-content: space-evenly;
+  align-content: flex-end;
+  flex-grow: 0;
+  flex-flow: row wrap;
+  padding-bottom: 0.5rem;
+  padding-right: 0.25rem;
+  padding-left: 1rem;
+}/*# sourceMappingURL=Precheck.module.css.map */

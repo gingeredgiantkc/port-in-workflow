@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  margin: 1rem;
+  color: #05122d;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  font-family: "PP Object Sans";
+  font-size: 1rem;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 13;
+}
+
+.section {
+  margin: 0.5rem;
+  padding: 0;
+}
+.section .question {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.hyperlink {
+  color: #ff0037;
+  text-decoration-line: underline;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.hyperlink:hover, .hyperlink:focus {
+  color: #80001c;
+}/*# sourceMappingURL=pages.module.css.map */
